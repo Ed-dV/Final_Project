@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-lg navbar-light my-navbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Home</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      {% if logged_in %}
+      <li><p class="navbar-text">{{ session['user_data']['name']}}</li>
+      <li><p class="navbar-text">Github userid: {{ session['user_data']['login']}}</li>
+      {% endif %}
+      <li>
+        {% if logged_in %}
+        <a href="/logout">Logout</a>
+        {% else %}
+        <a href="/login">Login</a>
+        {% endif %}
+      </li>
+    </ul>
+  </div>
+</nav>
