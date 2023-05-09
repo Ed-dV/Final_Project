@@ -48,9 +48,9 @@ print("connected to db")
 def inject_logged_in():
     return {"logged_in":('github_token' in session)}
 
-@app.route('/')
-def home():
-    return render_template('home.html')
+@app.route('/cart')
+def cart():
+    return render_template('cart.html')
 
 #redirect to GitHub's OAuth page and confirm callback URL
 @app.route('/login')
@@ -86,5 +86,5 @@ def authorized():
 def get_github_oauth_token():
     return session['github_token']
   
-  if __name__ == '__main__':
+if __name__ == '__main__':
     app.run()
