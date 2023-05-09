@@ -18,6 +18,7 @@
     </div>
     <ul class="nav navbar-nav navbar-right">
       {% if logged_in %}
+      <li><a class="navbar-brand" href='/cart'>Cart</a><li>
       <li><p class="navbar-text">{{ session['user_data']['name']}}</li>
       <li><p class="navbar-text">Github userid: {{ session['user_data']['login']}}</li>
       {% endif %}
