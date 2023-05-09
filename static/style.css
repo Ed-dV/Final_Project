@@ -86,3 +86,64 @@ input[type=button], input[type=submit], input[type=reset] {
     display: block;
 }
 
+.bigger{
+	font-size: 47px;
+}
+
+
+.my-navbar {
+      background-color: black; 
+    }
+#amastyle{
+	background-color: #555555;
+	color:white;
+}
+
+#txtb {
+  background-color: #555555;
+}
+
+a:link,
+a:visited {
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+a:hover {
+  border-color: white;
+  color:black;
+}
+
+
+.menu-icon {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #ffffff;
+  margin: 4px 0;
+}
+
+
+.change .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 5px);
+}
+
+.change .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.change .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -5px);
+}
+
+#menuS{
+	font-size:30px;
+	color:white;
+}
