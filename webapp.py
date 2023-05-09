@@ -50,7 +50,11 @@ def inject_logged_in():
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    return render_template ('home.html')
+
+@app.route('/Cart')
+def cart():
+    return render_template('cart.html')
 
 @app.route('/Cart')
 def cart():
@@ -89,6 +93,12 @@ def authorized():
 @github.tokengetter
 def get_github_oauth_token():
     return session['github_token']
+
+
+def items():
+#for the mongodb code i think 
+
+
   
 if __name__ == '__main__':
     app.run()
