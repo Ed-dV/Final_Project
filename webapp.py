@@ -55,11 +55,7 @@ def home():
 @app.route('/Cart')
 def cart():
     return render_template('cart.html')
-
-@app.route('/Cart')
-def cart():
-    return render_template('cart.html')
-    
+   
 #redirect to GitHub's OAuth page and confirm callback URL
 @app.route('/login')
 def login():   
@@ -95,10 +91,9 @@ def get_github_oauth_token():
     return session['github_token']
 
 
-def items():
+#def items():
 #for the mongodb code i think 
 
-
-  
+ 
 if __name__ == '__main__':
     app.run()
