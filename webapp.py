@@ -53,7 +53,7 @@ def home():
     return render_template ('home.html')
 
 @app.route('/Cart')
-def cart():
+def Cart():
     return render_template('cart.html')
    
 #redirect to GitHub's OAuth page and confirm callback URL
