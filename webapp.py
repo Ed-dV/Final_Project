@@ -37,7 +37,7 @@ github = oauth.remote_app(
 url = os.environ["MONGO_CONNECTION_STRING"]
 client = pymongo.MongoClient(url)
 db = client[os.environ["MONGO_DBNAME"]]
-collection = db['Cart'] #TODO: put the name of the collection here
+collection = db['posts'] #TODO: put the name of the collection here
 
 print("connected to db")
 
@@ -50,16 +50,18 @@ def inject_logged_in():
 
 @app.route('/')
 def home():
-    return render_template ('home.html')
-
-@app.route('/cart')
-def cart():
-    return render_template('cart.html')
+    return render_template('home.html')
+@app.route('/info1')
+def info1():
+    return render_template('info1.html')
+@app.route('/info2')
+def info2():
+    return render_template('info2.html')
 
 #redirect to GitHub's OAuth page and confirm callback URL
 @app.route('/login')
 def login():   
-    return github.authorize(callback=url_for('authorized', _external=True, _scheme='http')) #callback URL must match the pre-configured callback URL
+    return github.authorize(callback=url_for('authorized', _external=True, _scheme='https')) #callback URL must match the pre-configured callback URL
 
 @app.route('/logout')
 def logout():
@@ -89,12 +91,6 @@ def authorized():
 @github.tokengetter
 def get_github_oauth_token():
     return session['github_token']
-
-
-def items():
-#for the mongodb code i think 
-
-
   
 if __name__ == '__main__':
     app.run()
