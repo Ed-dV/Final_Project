@@ -3,7 +3,13 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
+
 		<!--
+
+
+
+	<!--
+
     {% if logged_in %}
         <form action="/post" method='POST'>
             Name of your Favorite Food or Drink<br>
@@ -14,8 +20,10 @@
             <br>
             <input type="submit">
         </form>
+		-->
         {{ post }}
         {{newc}}
+
    		-->
 		<script>
 $(document).ready(function() {
@@ -100,4 +108,8 @@ $(document).ready(function() {
 
 
     {% endif %}
+
+   
+    <!--{% endif %}-->
+
 {% endblock %}

@@ -93,6 +93,7 @@ input[type=button], input[type=submit], input[type=reset] {
 
 .my-navbar {
       background-color: black; 
+
     }
 #amastyle{
 	background-color: #555555;
@@ -159,4 +160,11 @@ a:hover {
   content: "";
   clear: both;
   display: table;
+}
+
+}
+
+#checkout{
+    background-color:grey;
+    border-radius: 25px;
 }
