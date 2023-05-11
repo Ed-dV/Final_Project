@@ -51,16 +51,24 @@ def inject_logged_in():
 @app.route('/')
 def home():
     return render_template('home.html')
+    
 @app.route('/info1', methods=['GET', 'POST'])
 def info1():
     return render_template('info1.html')
+    
 @app.route('/info2', methods=['GET','POST'])
 def info2():
     return render_template('info2.html')
+    
 @app.route('/complete', methods=['GET', 'POST'])
 def complete():
     return render_template('complete.html')
 #redirect to GitHub's OAuth page and confirm callback URL
+
+@app.route('/cart')
+def cart():
+    return render_template('cart.html')
+    
 @app.route('/login')
 def login():   
     return github.authorize(callback=url_for('authorized', _external=True, _scheme='https')) #callback URL must match the pre-configured callback URL
