@@ -50,8 +50,16 @@ def inject_logged_in():
 
 @app.route('/')
 def home():
-    return render_template ('home.html')
-
+    return render_template('home.html') 
+    
+   #if 'user_data' in session:
+        #newcart={'Username':session['user_data']['login'],
+        #'Number of Items':request.form['Number of Items']
+        #}
+        #return render_template('home.html')
+    #else:
+        #return redirect('/')
+        
 @app.route('/Cart')
 def Cart():
     return render_template('cart.html')
