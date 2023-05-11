@@ -86,3 +86,11 @@ input[type=button], input[type=submit], input[type=reset] {
     display: block;
 }
 
+.bigger{
+	font-size: 47px;
+}
+
+
+.my-navbar {
+      background-color: black; 
+    }
