@@ -7,20 +7,34 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-	<div class="bigger">
-    <a class="navbar-brand" href="/">
+
+      <div class="bigger">
+        <a class="navbar-brand" href="/">
+          <button id="amastyle" style="font-size:24px"><i class="fa fa-amazon"></i>mazone</button>
+        </a>
+      </div>
+      <div class="menu-container">
+        <div class="menu-icon">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+        <span class="menu-text" id="menuS">Menu</span>
+      </div>
+
+       <div class="bigger">
+       <a class="navbar-brand" href="/">
        <button style="font-size:24px"><i class="fa fa-amazon"></i>mazone</button>
         </i>
     </a>
 </div>
 
-
     </div>
-    <ul class="nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-right">
       {% if logged_in %}
-      <li><a class="navbar-brand" href='/cart'>Cart</a><li>
+      <li><a class="navbar-brand" href='/Cart'>Cart</a></li>
       <li><p class="navbar-text">{{ session['user_data']['name']}}</li>
-      <li><p class="navbar-text">Github userid: {{ session['user_data']['login']}}</li>
+      <li><p class="navbar-text" id="txtb">Github userid: {{ session['user_data']['login']}}</li>
       {% endif %}
       <li>
         {% if logged_in %}
