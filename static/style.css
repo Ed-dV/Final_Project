@@ -196,3 +196,21 @@ a:hover {
 .butcart:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
+
+.column1 {
+  float: left;
+  width: 20%;
+  padding: 5px;
+}
+
+.row1::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.1x2p{
+	width:1000px;
+	height:2000px;
+
+}
