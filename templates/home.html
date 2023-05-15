@@ -33,7 +33,7 @@ $(document).ready(function() {
   });
 });
 </script>
-
+{% if logged_in %}
 <!--picture slides-->
 <div class="container">
   <h2>Popular</h2>
@@ -105,6 +105,6 @@ $(document).ready(function() {
 	<p>Whine</p>
   </div>
 </div> 
-    <!--{% endif %}-->
-
+{% endif %}
+{% endif %}
 {% endblock %}
