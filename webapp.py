@@ -66,7 +66,7 @@ def Cart():
 #redirect to GitHub's OAuth page and confirm callback URL
 @app.route('/login')
 def login():   
-    return github.authorize(callback=url_for('authorized', _external=True, _scheme='https')) #callback URL must match the pre-configured callback URL
+    return github.authorize(callback=url_for('authorized', _external=True, _scheme='http')) #callback URL must match the pre-configured callback URL
 
 @app.route('/logout')
 def logout():
@@ -93,16 +93,9 @@ def authorized():
             flash('Unable to login, please try again.', 'error')
     return redirect('/')
   
-
-   
-#redirect to GitHub's OAuth page and confirm callback URL  
 @github.tokengetter
 def get_github_oauth_token():
     return session['github_token']
-
-#def items():
-#for the mongodb code i think 
-
+  
 if __name__ == '__main__':
     app.run()
-
