@@ -1,3 +1,4 @@
+main
 from flask import Flask, redirect, url_for, session, request, jsonify, render_template, flash
 from flask_apscheduler import APScheduler
 from apscheduler.schedulers.background import BackgroundScheduler
@@ -106,4 +107,3 @@ def get_github_oauth_token():
   
 if __name__ == '__main__':
     app.run()
-
