@@ -37,7 +37,7 @@ github = oauth.remote_app(
 url = os.environ["MONGO_CONNECTION_STRING"]
 client = pymongo.MongoClient(url)
 db = client[os.environ["MONGO_DBNAME"]]
-collection = db['posts'] #TODO: put the name of the collection here
+collection = db['Cart'] #TODO: put the name of the collection here
 
 print("connected to db")
 
@@ -50,8 +50,12 @@ def inject_logged_in():
 
 @app.route('/')
 def home():
-    return render_template('home.html')
+    return render_template ('home.html')
 
+@app.route('/Cart')
+def Cart():
+    return render_template('cart.html')
+   
 #redirect to GitHub's OAuth page and confirm callback URL
 @app.route('/login')
 def login():   
@@ -85,6 +89,11 @@ def authorized():
 @github.tokengetter
 def get_github_oauth_token():
     return session['github_token']
-  
+
+
+#def items():
+#for the mongodb code i think 
+
+ 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)

@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% set active_page = "Cart" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+  <h1>Shopping Cart</h1>
+  
+  <div>
+    <h3>Items&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Price</h3>
+  </div> 
+
+  <p>This is a template.</p>
+  <!--Pull from mongoDB, and have it show the names of the items.-->
+  <!-- Calculate price from mongoDB.-->
+  <!-- Checkout button which takes you to checkout page-->
+   <form action={{ url_for("home") }} method="GET">
+    <input id="checkout" type="submit" value="Continue to Checkout">
+   </form> 
+
+{% endblock %}

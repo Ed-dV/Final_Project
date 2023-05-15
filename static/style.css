@@ -93,6 +93,7 @@ input[type=button], input[type=submit], input[type=reset] {
 
 .my-navbar {
       background-color: black; 
+
     }
 #amastyle{
 	background-color: #555555;
@@ -163,6 +164,7 @@ a:hover {
   clear: both;
   display: table;
 }
+
 .padding1{
 	padding: 250px;
 }
@@ -214,3 +216,10 @@ a:hover {
 	height:2000px;
 
 }
+
+
+#checkout{
+    background-color:grey;
+    border-radius: 25px;
+}
+

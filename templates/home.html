@@ -1,22 +1,12 @@
 {% extends "layout.html" %}
 
 {% block title %}Home{% endblock %}
-
+<!--
 {% block content %}
-		<!--
-    {% if logged_in %}
-        <form action="/post" method='POST'>
-            Name of your Favorite Food or Drink<br>
-            <input type="text" name="Subject" id="1">
-            <br>
-            Write about your favorite food<br>
-            <input type="text" name="Body" id="2">
-            <br>
-            <input type="submit">
-        </form>
+
         {{ post }}
         {{newc}}
-   		-->
+-->
 		<script>
 $(document).ready(function() {
   $('.navbar-toggle').on('click', function() {
@@ -185,5 +175,4 @@ $(document).ready(function() {
 </div>
 
 
-    {% endif %}
 {% endblock %}
