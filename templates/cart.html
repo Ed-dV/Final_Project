@@ -13,5 +13,11 @@
   </div> 
 
   <p>This is a template.</p>
+  <!--Pull from mongoDB, and have it show the names of the items.-->
+  <!-- Calculate price from mongoDB.-->
+  <!-- Checkout button which takes you to checkout page-->
+   <form action={{ url_for("home") }} method="GET">
+    <input id="checkout" type="submit" value="Continue to Checkout">
+   </form> 
 
 {% endblock %}

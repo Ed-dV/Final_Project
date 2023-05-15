@@ -64,10 +64,10 @@ def info2():
 def complete():
     return render_template('complete.html')
 
-@app.route('/cart')
-def cart():
+@app.route('/Cart')
+def Cart():
     return render_template('cart.html')
-
+   
 #redirect to GitHub's OAuth page and confirm callback URL
 @app.route('/login')
 def login():   
@@ -103,7 +103,7 @@ def get_github_oauth_token():
     return session['github_token']
 
 
-
   
 if __name__ == '__main__':
     app.run()
+
