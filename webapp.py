@@ -52,15 +52,17 @@ def inject_logged_in():
 def home():
     return render_template('home.html')
     
-@app.route('/info1', methods=['GET', 'POST'])
+@app.route('/info1', methods=['POST'])
 def info1():
+    #Need to check how many and if greater than 0
     return render_template('info1.html')
     
-@app.route('/info2', methods=['GET','POST'])
+@app.route('/info2', methods=['POST'])
 def info2():
+    #Need to check how many and if greater than 0
     return render_template('info2.html')
     
-@app.route('/complete', methods=['GET', 'POST'])
+@app.route('/complete', methods=['POST'])
 def complete():
     return render_template('complete.html')
 
