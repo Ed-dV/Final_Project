@@ -37,7 +37,9 @@ github = oauth.remote_app(
 url = os.environ["MONGO_CONNECTION_STRING"]
 client = pymongo.MongoClient(url)
 db = client[os.environ["MONGO_DBNAME"]]
-collection = db['Cart'] #TODO: put the name of the collection here
+collection = db['Cart'] 
+db2 = client[os.environ["MONGO_DBNAME2"]]
+collection2 = db['item']#TODO: put the name of the collection here
 
 print("connected to db")
 
@@ -51,18 +53,23 @@ def inject_logged_in():
 @app.route('/')
 def home():
     return render_template('home.html')
+    
 @app.route('/info1', methods=['GET', 'POST'])
 def info1():
     return render_template('info1.html')
+    
 @app.route('/info2', methods=['GET','POST'])
 def info2():
     return render_template('info2.html')
+    
 @app.route('/complete', methods=['GET', 'POST'])
 def complete():
     return render_template('complete.html')
+
 @app.route('/Cart')
 def Cart():
     return render_template('cart.html')
+   
 #redirect to GitHub's OAuth page and confirm callback URL
 @app.route('/login')
 def login():   
@@ -86,6 +93,10 @@ def authorized():
             session['user_data']=github.get('user').data
             #pprint.pprint(vars(github['/email']))
             #pprint.pprint(vars(github['api/2/accounts/profile/']))
+            print (session['user_data']['id'])
+            cart = collection.find_one({'User': session['user_data']['id']})
+            if cart is None:
+                collection.insert_one({'User':session['user_data']['id'], 'Item-Name':[]})
             flash('You were successfully logged in as ' + session['user_data']['login'] + '.')
         except Exception as inst:
             session.clear()
@@ -96,6 +107,12 @@ def authorized():
 @github.tokengetter
 def get_github_oauth_token():
     return session['github_token']
+
+@app.route('/addtoCart', methods=["GET", "POST"])
+def addtoCart():
+    collection.update_one({'User': session['user_data']['id']}, {'$push':{"Item-Name":ObjectId(request.form['Cart'])}})
+    cart=collection.find_one({'User': session['user_data']['id']})
+    return str(len(cart['Item-Name']))
   
 if __name__ == '__main__':
     app.run()
