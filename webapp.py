@@ -1,4 +1,4 @@
-from flask import Flask, redirect, url_for, session, request, jsonify, render_template, flash
+from flask import Flask, redirect, url_for, session, request, jsonify, render_template, flash, Markup
 from flask_apscheduler import APScheduler
 from apscheduler.schedulers.background import BackgroundScheduler
 from flask_oauthlib.client import OAuth
@@ -39,7 +39,7 @@ client = pymongo.MongoClient(url)
 db = client[os.environ["MONGO_DBNAME"]]
 collection = db['Cart'] 
 db2 = client[os.environ["MONGO_DBNAME2"]]
-collection2 = db['item']#TODO: put the name of the collection here
+collection2 = db2['item']#TODO: put the name of the collection here
 
 print("connected to db")
 
@@ -68,7 +68,7 @@ def complete():
 
 @app.route('/Cart')
 def Cart():
-    return render_template('cart.html')
+    return render_template('cart.html', cart=finalCart())
    
 #redirect to GitHub's OAuth page and confirm callback URL
 @app.route('/login')
@@ -113,6 +113,13 @@ def addtoCart():
     collection.update_one({'User': session['user_data']['id']}, {'$push':{"Item-Name":ObjectId(request.form['Cart'])}})
     cart=collection.find_one({'User': session['user_data']['id']})
     return str(len(cart['Item-Name']))
-  
+    
+def finalCart():  
+    finalCart=Markup('<ul>')
+    for element in collection.find_one({'User': session['user_data']['id']})['Item-Name']:
+        item = collection2.find_one({'_id': ObjectId(str(element))})
+        finalCart= finalCart + Markup('<li>' + item['Item-Name'] + '</li>')      
+    finalCart= finalCart + Markup('</ul>')
+    return finalCart
 if __name__ == '__main__':
     app.run()
