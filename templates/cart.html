@@ -12,6 +12,9 @@
     <h3>Items&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Price</h3>
   </div> 
 
-  <p>This is a template.</p>
+  {{ cart }}
+   <form action={{ url_for("home") }} method="GET">
+    <input id="checkout" type="submit" value="Continue to Checkout">
+   </form> 
 
 {% endblock %}
