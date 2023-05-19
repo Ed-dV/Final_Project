@@ -115,11 +115,12 @@ def addtoCart():
     return str(len(cart['Item-Name']))
     
 def finalCart():  
-    finalCart=Markup('<ul>')
+    finalCart=Markup('<table>')
     for element in collection.find_one({'User': session['user_data']['id']})['Item-Name']:
         item = collection2.find_one({'_id': ObjectId(str(element))})
-        finalCart= finalCart + Markup('<li>' + item['Item-Name'] + '</li>')      
-    finalCart= finalCart + Markup('</ul>')
+        finalCart= finalCart + Markup('<th> Item </th> <th> Price </th> <tr> <td>' + item['Item-Name'] + '</td>')
+        finalCart= finalCart + Markup('<td>' + str(item['Price']) + '</td> </tr>')
+    finalCart= finalCart + Markup('</table>')
     return finalCart
 if __name__ == '__main__':
     app.run()
