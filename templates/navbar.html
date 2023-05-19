@@ -20,7 +20,8 @@
 
     <ul class="nav navbar-nav navbar-right">
       {% if logged_in %}
-        <li><a class="navbar-brand" href="/Cart">Cart</a><span id="cartnum"><p>0</p></span></li>
+        <li><a class="navbar-brand" href="/Cart">Cart</a></li>
+        <li><p class="navbar-text" id="cartnum">0</p></li>
         <li><p class="navbar-text" id="txtb">Github userid: {{ session['user_data']['login']}}</p></li>
       {% endif %}
       <li>
