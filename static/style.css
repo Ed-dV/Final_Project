@@ -1,14 +1,4 @@
-/* Light mode */
-body {
-  background-color: #ffffff;
-  color: #000000;
-}
 
-/* Dark mode */
-body.dark-mode {
-  background-color: #333333;
-  color: #ffffff;
-}
 #content {
      margin-left: 20px;
 }
@@ -124,35 +114,6 @@ a:hover {
   cursor: pointer;
 }
 
-.bar {
-  width: 25px;
-  height: 3px;
-  background-color: #ffffff;
-  margin: 4px 0;
-}
-
-
-.change .bar:nth-child(1) {
-  transform: rotate(-45deg) translate(-5px, 5px);
-}
-
-.change .bar:nth-child(2) {
-  opacity: 0;
-}
-
-.change .bar:nth-child(3) {
-  transform: rotate(45deg) translate(-5px, -5px);
-}
-
-#menuS{
-	font-size:30px;
-	color:white;
-}
-
-* {
-  box-sizing: border-box;
-}
-
 .column {
   float: left;
   width: 20%;
@@ -179,6 +140,11 @@ a:hover {
 	width:300px;
 	height:300px;
 }
+#product-image{
+	width:300px;
+	height:300px;
+	border: 1px solid black;
+}
 
 .butcart {
   display: inline-block;
@@ -188,11 +154,12 @@ a:hover {
   text-align: center;
   text-decoration: none;
   outline: none;
-  color: #fff;
-  background-color: #4CAF50;
+  color: black;
+  background-color:#ffd900;
   border: none;
   border-radius: 15px;
   width: 200px;
+ 
 }
 
 .butcart:hover {
@@ -223,3 +190,248 @@ a:hover {
     border-radius: 25px;
 }
 
+#hyper,
+a {
+  text-decoration: none;
+  color: black;
+}
+
+#hyper:hover,
+a:hover {
+  color: orange;
+  background-color: transparent;
+}
+
+.zoom {
+  position: relative;
+}
+
+.zoom img {
+  width: 100%;
+}
+
+.zoom-overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 999;
+}
+
+.zoomed-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.8); /* Adjust the background color and opacity as needed */
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+
+
+
+.rowSub {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start; 
+}
+
+.columnSub {
+  flex: 0 0 auto;
+}
+
+
+.thumbnail-images {
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px; 
+}
+
+.thumbnail {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px; 
+}
+
+.product-gallery {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-image {
+  position: relative;
+}
+
+.image-container {
+  position: relative;
+}
+
+#image-caption {
+   font-size: 12px;
+   color: #888;
+   text-align: center;
+}
+
+#priceColor{
+	color:coral;
+}
+
+.thicker-hr {
+  height: 1px;
+  background-color: black;
+  width: 700px;
+}
+
+ .btn-outline-primary.active {
+    background-color: white;
+    border-color: coral;
+  }
+  /*list */
+  ul.circle {
+  list-style-type: circle;
+}
+
+/* Popup container */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+  visibility: hidden;
+  width: 280px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+#hyperFusion,
+a {
+  text-decoration: none;
+  color: #60bbf7;
+}
+
+#hyperFusion:hover,
+a:hover {
+  color: orange;
+  background-color: transparent;
+}
+
+#free{
+	color: #60bbf7;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+.box{
+  background-color:white;
+  width: 300px;
+  height:700px;
+  border: 2px solid grey;
+  padding: 50px;
+  border-radius: 15px;
+  position: relative;
+}
+
+.price {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    margin: 0;
+}
+.prop{
+    position: absolute;
+    top: 60px;
+    left: 10px;
+    margin: 0;
+}
+.prop2{
+    position: absolute;
+    top: 180px;
+    left: 10px;
+    margin: 0;
+	color:#53ab00;
+}
+.prop3{
+    position: absolute;
+    top: 280px;
+    left: 10px;
+    margin: 0;
+	color:#6bde00;
+}
+.move{
+	position: relative;
+	left: 200px;
+}
+
+
+.moveBox{
+	position: relative;
+	left: 50px; 
+}
+
+.bold{
+  font-weight: bold;
+}
