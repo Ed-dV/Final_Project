@@ -223,8 +223,14 @@ a:hover {
     border-radius: 25px;
 }
 
+#abt{
+	text-align:center;
+	font-size:30px;
+}
+
 #cartnum{
     color: white;
 }
+
 
 
