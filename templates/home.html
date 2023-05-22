@@ -69,6 +69,14 @@ $(document).ready(function() {
 
 
 <!--set 1-->
+<script>
+$(document).ready(function(){
+    $(".butcart").click(function(){
+    let value = this;
+        $("#cartnum").load('/addtoCart', {"Cart":value.previousElementSibling.value})
+    });
+});
+</script>
 <div class="row">
   <div class="column">
     <div class="product">
@@ -77,7 +85,8 @@ $(document).ready(function() {
 		  <p>Brand: Mixson</p>
 		  <p class="price">$9.99</p>
 		  <p class="description">A unique adhesive product offered by the brand Mixson</p>
-		  <button class="butcart">Add to Cart<i class="fa fa-shopping-cart"></i></button>
+          <input type="hidden" id="test" name="Item" value="6462a078ad4676a9ee5036fd">
+          <button class="butcart">Add to Cart<i class="fa fa-shopping-cart"></i></button>
     </div>
   </div>
   <div class="column">
@@ -87,7 +96,8 @@ $(document).ready(function() {
 		  <p>Brand: Forkle</p>
 		  <p class="price">$19.99</p>
 		  <p class="description">Easy to use!</p>
-		  <button class="butcart">Add to Cart<i class="fa fa-shopping-cart"></i></button>
+          <input type="hidden" name="Item" value="6462a110ad4676a9ee5036fe">
+          <button class="butcart">Add to Cart<i class="fa fa-shopping-cart"></i></button>
     </div>
   </div>
   <div class="column">
@@ -97,7 +107,8 @@ $(document).ready(function() {
 		  <p>Brand: Whine</p>
 		  <p class="price">$29.99</p>
 		  <p class="description">Enjoy the light show!</p>
-		  <button class="butcart">Add to Cart<i class="fa fa-shopping-cart"></i></button>
+          <input type="hidden" name="Item" value="6462a16fad4676a9ee5036ff">
+          <button class="butcart">Add to Cart<i class="fa fa-shopping-cart"></i></button>
     </div>
   </div>
   <div class="column">
@@ -107,7 +118,8 @@ $(document).ready(function() {
 		  <p>Brand: Evolution</p>
 		  <p class="price">$49.99</p>
 		  <p class="description">More technology for your screenagers!</p>
-		  <button class="butcart">Add to Cart<i class="fa fa-shopping-cart"></i></button>
+          <input type="hidden" name="Item" value="6463da87c0b3d1b9cfa0c996">
+          <button class="butcart">Add to Cart<i class="fa fa-shopping-cart"></i></button>
     </div>
   </div>
   <div class="column">
@@ -117,7 +129,8 @@ $(document).ready(function() {
 		  <p>Brand: Pet Rock!!</p>
 		  <p class="price">$9.99</p>
 		  <p class="description">Pet Rock!!!</p>
-		  <button class="butcart">Add to Cart<i class="fa fa-shopping-cart"></i></button>
+          <input type="hidden" name="Item" value="6463dac5c0b3d1b9cfa0c997">
+          <button class="butcart">Add to Cart<i class="fa fa-shopping-cart"></i></button>
     </div>
   </div>
   </div>
@@ -130,9 +143,11 @@ $(document).ready(function() {
       <p>Brand: O'Hare</p>
       <p class="price">$1.99</p>
       <p class="description">The element of surprise</p>
+      <input type="hidden" name="Item" value="6463db21c0b3d1b9cfa0c999">
       <button class="butcart">Add to Cart<i class="fa fa-shopping-cart"></i></button>
     </div>
   </div>
+  
   <div class="column">
     <div class="product">
       <img id="pics" src="https://kamami.pl/39469-home_default/big-round-push-button-a-large-round-button-with-led-backlight-100mm-red.jpg" alt="The Instant Excuse Button">
@@ -140,6 +155,7 @@ $(document).ready(function() {
       <p>Brand: ExcuseMe</p>
       <p class="price">$5.99</p>
       <p class="description">You are excused</p>
+      <input type="hidden" name="Item" value="6463dd6f63891d24ea758769">
       <button class="butcart">Add to Cart<i class="fa fa-shopping-cart"></i></button>
     </div>
   </div>
@@ -150,6 +166,18 @@ $(document).ready(function() {
       <p>Brand: Squeaky</p>
       <p class="price">$9.99</p>
       <p class="description">Feature a soft and comfortable sole for a cozy fit</p>
+      <input type="hidden" name="Item" value="6463dbdb63891d24ea758766">
+      <button class="butcart">Add to Cart<i class="fa fa-shopping-cart"></i></button>
+    </div>
+  </div>
+  <div class="column">
+    <div class="product">
+      <img id="pics" src="https://cdn.shopify.com/s/files/1/0342/7431/2325/products/christmas-story-bunny-slippers-1-1000-web_1000x.jpg" alt="Squeaky Slippers">
+      <h3>Squeaky Slippers</h3>
+      <p>Brand: Squeaky</p>
+      <p class="price">$9.99</p>
+      <p class="description">Feature a soft and comfortable sole for a cozy fit</p>
+      <input type="hidden" name="Item" value="6463dbdb63891d24ea758766">
       <button class="butcart">Add to Cart<i class="fa fa-shopping-cart"></i></button>
     </div>
   </div>
@@ -160,6 +188,7 @@ $(document).ready(function() {
       <p>Brand: Coddie</p>
       <p class="price">$23</p>
       <p class="description">Side effect: your toe gonna smell fishy</p>
+      <input type="hidden" name="Item" value="6463dc1f63891d24ea758767">
       <button class="butcart">Add to Cart<i class="fa fa-shopping-cart"></i></button>
     </div>
   </div>
@@ -170,10 +199,10 @@ $(document).ready(function() {
       <p>Brand: Watchers</p>
       <p class="price">$6.99</p>
       <p class="description">Watchin'</p>
+      <input type="hidden" name="Item" value="6463dc6463891d24ea758768">
       <button class="butcart">Add to Cart<i class="fa fa-shopping-cart"></i></button>
     </div>
   </div>
 </div>
-
 
 {% endblock %}

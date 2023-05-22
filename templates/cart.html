@@ -1,3 +1,4 @@
+
 {% extends "layout.html" %}
 
 {% set active_page = "Cart" %}
@@ -11,7 +12,10 @@
   <div>
     <h3>Items&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Price</h3>
   </div> 
+ {{ cart }}
 	<form action="/info1" method="POST">
     <input type="submit" value="Proceed To Checkout"/>
+   </form> 
+
 
 {% endblock %}
