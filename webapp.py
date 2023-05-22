@@ -41,6 +41,9 @@ collection = db['Cart']
 db2 = client[os.environ["MONGO_DBNAME2"]]
 collection2 = db2['item']#TODO: put the name of the collection here
 
+
+
+
 print("connected to db")
 
 #context processors run before templates are rendered and add variable(s) to the template's context
@@ -69,7 +72,6 @@ def complete():
 @app.route('/Cart')
 def Cart():
     return render_template('cart.html', cart=finalCart())
-   
 #redirect to GitHub's OAuth page and confirm callback URL
 @app.route('/login')
 def login():   
@@ -121,6 +123,7 @@ def finalCart():
         finalCart= finalCart + Markup('<td>' + str(item['Price']) + '</td> </tr>')
     finalCart= finalCart + Markup('</table>')
     return finalCart
+
     
 @app.route ('/emptyCart', methods=["GET", "POST"])
 def emptyCart():
@@ -128,6 +131,7 @@ def emptyCart():
     newCart = {"$set": {"Item-Name": [] } }
     collection.update_one(one, newCart)
     return redirect('/Cart')
+
 
 if __name__ == '__main__':
     app.run()
