@@ -93,7 +93,6 @@ def authorized():
             session['user_data']=github.get('user').data
             #pprint.pprint(vars(github['/email']))
             #pprint.pprint(vars(github['api/2/accounts/profile/']))
-            print (session['user_data']['id'])
             cart = collection.find_one({'User': session['user_data']['id']})
             if cart is None:
                 collection.insert_one({'User':session['user_data']['id'], 'Item-Name':[]})
@@ -122,5 +121,13 @@ def finalCart():
         finalCart= finalCart + Markup('<td>' + str(item['Price']) + '</td> </tr>')
     finalCart= finalCart + Markup('</table>')
     return finalCart
+    
+@app.route ('/emptyCart', methods=["GET", "POST"])
+def emptyCart():
+    one = ({'User': session['user_data']['id']})
+    newCart = {"$set": {"Item-Name": [] } }
+    collection.update_one(one, newCart)
+    return redirect('/Cart')
+
 if __name__ == '__main__':
     app.run()

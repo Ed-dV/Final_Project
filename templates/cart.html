@@ -16,5 +16,8 @@
    <form action={{ url_for("home") }} method="GET">
     <input id="checkout" type="submit" value="Continue to Checkout">
    </form> 
-
+    
+    <form action={{ url_for("emptyCart") }}>
+        <input type="submit" value="Empty Cart">
+    </form>
 {% endblock %}
