@@ -62,6 +62,10 @@ def info2():
     #Need to check how many and if greater than 0
     return render_template('info2.html')
     
+@app.route('/about')
+def about():
+    return render_template('about.html')
+    
 @app.route('/complete', methods=['POST'])
 def complete():
     return render_template('complete.html')
