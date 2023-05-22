@@ -101,7 +101,15 @@ def authorized():
 @github.tokengetter
 def get_github_oauth_token():
     return session['github_token']
+''''
+Items
+'''  
+@app.route('/glue')
+def glue():
+    return render_template('glue.html')
 
+    
+  
 
   
 if __name__ == '__main__':
