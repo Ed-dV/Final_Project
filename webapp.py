@@ -1,4 +1,4 @@
-from flask import Flask, redirect, url_for, session, request, jsonify, render_template, flash
+from flask import Flask, redirect, url_for, session, request, jsonify, render_template, flash, Markup
 from flask_apscheduler import APScheduler
 from apscheduler.schedulers.background import BackgroundScheduler
 from flask_oauthlib.client import OAuth
@@ -37,7 +37,12 @@ github = oauth.remote_app(
 url = os.environ["MONGO_CONNECTION_STRING"]
 client = pymongo.MongoClient(url)
 db = client[os.environ["MONGO_DBNAME"]]
-collection = db['Cart'] #TODO: put the name of the collection here
+collection = db['Cart'] 
+db2 = client[os.environ["MONGO_DBNAME2"]]
+collection2 = db2['item']#TODO: put the name of the collection here
+
+
+
 
 print("connected to db")
 
@@ -52,22 +57,27 @@ def inject_logged_in():
 def home():
     return render_template('home.html')
     
-@app.route('/info1', methods=['GET', 'POST'])
+@app.route('/info1', methods=['POST'])
 def info1():
+    #Need to check how many and if greater than 0
     return render_template('info1.html')
     
-@app.route('/info2', methods=['GET','POST'])
+@app.route('/info2', methods=['POST'])
 def info2():
+    #Need to check how many and if greater than 0
     return render_template('info2.html')
     
-@app.route('/complete', methods=['GET', 'POST'])
+@app.route('/about')
+def about():
+    return render_template('about.html')
+    
+@app.route('/complete', methods=['POST'])
 def complete():
     return render_template('complete.html')
 
 @app.route('/Cart')
 def Cart():
-    return render_template('cart.html')
-   
+    return render_template('cart.html', cart=finalCart())
 #redirect to GitHub's OAuth page and confirm callback URL
 @app.route('/login')
 def login():   
@@ -91,6 +101,9 @@ def authorized():
             session['user_data']=github.get('user').data
             #pprint.pprint(vars(github['/email']))
             #pprint.pprint(vars(github['api/2/accounts/profile/']))
+            cart = collection.find_one({'User': session['user_data']['id']})
+            if cart is None:
+                collection.insert_one({'User':session['user_data']['id'], 'Item-Name':[]})
             flash('You were successfully logged in as ' + session['user_data']['login'] + '.')
         except Exception as inst:
             session.clear()
@@ -108,9 +121,24 @@ Items
 def glue():
     return render_template('glue.html')
 
-    
-  
 
-  
+    
+ 
+@app.route('/addtoCart', methods=["GET", "POST"])
+def addtoCart():
+    collection.update_one({'User': session['user_data']['id']}, {'$push':{"Item-Name":ObjectId(request.form['Cart'])}})
+    cart=collection.find_one({'User': session['user_data']['id']})
+    return str(len(cart['Item-Name']))
+    
+def finalCart():  
+    finalCart=Markup('<table>')
+    for element in collection.find_one({'User': session['user_data']['id']})['Item-Name']:
+        item = collection2.find_one({'_id': ObjectId(str(element))})
+        finalCart= finalCart + Markup('<th> Item </th> <th> Price </th> <tr> <td>' + item['Item-Name'] + '</td>')
+        finalCart= finalCart + Markup('<td>' + str(item['Price']) + '</td> </tr>')
+    finalCart= finalCart + Markup('</table>')
+    return finalCart
+
+
 if __name__ == '__main__':
     app.run()

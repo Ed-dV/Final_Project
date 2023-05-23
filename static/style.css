@@ -164,6 +164,7 @@ a:hover {
 
 .butcart:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+
 }
 
 .column1 {
@@ -184,11 +185,11 @@ a:hover {
 
 }
 
-
 #checkout{
     background-color:grey;
     border-radius: 25px;
 }
+
 
 #hyper,
 a {
@@ -435,3 +436,16 @@ a:hover {
 .bold{
   font-weight: bold;
 }
+
+#abt{
+	text-align:center;
+	font-size:30px;
+}
+
+#cartnum{
+    color: white;
+}
+
+
+
+

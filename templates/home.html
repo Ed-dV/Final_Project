@@ -2,6 +2,8 @@
 
 {% block title %}Home{% endblock %}
 {% block content %}
+
+
 		<script>
 $(document).ready(function() {
   $('.navbar-toggle').on('click', function() {
@@ -53,6 +55,17 @@ $(document).ready(function() {
     </a>
   </div>
 </div>
+
+
+<!--set 1-->
+<script>
+$(document).ready(function(){
+    $(".butcart").click(function(){
+    let value = this;
+        $("#cartnum").load('/addtoCart', {"Cart":value.previousElementSibling.value})
+    });
+});
+</script>
 <!--items-->
 <div class="row">
   <div class="column">
@@ -67,6 +80,7 @@ $(document).ready(function() {
 		  <a href="/fork"><img id="pics" src="https://sc04.alicdn.com/kf/H87587cb9f0e7434b954f0d7fa6be7bcdD.jpg" alt="electric spaghetti twirling fork"></a>
 		  <h3><a id="hyper" href="/fork">Electric spaghetti twirling fork</a></h3>
 		  <p class="price"><a id="hyper" href="/fork">$19.99</a></p>
+
     </div>
   </div>
   <div class="column">
@@ -99,6 +113,7 @@ $(document).ready(function() {
       <p class="price"><a id="hyper" href="/air">$1.99</a></p>
     </div>
   </div>
+  
   <div class="column">
     <div class="product">
       <a id="hyper" href="/excuse"><img id="pics" src="https://kamami.pl/39469-home_default/big-round-push-button-a-large-round-button-with-led-backlight-100mm-red.jpg" alt="The Instant Excuse Button"></a>
@@ -128,9 +143,5 @@ $(document).ready(function() {
     </div>
   </div>
 </div>
-
-
 {% endblock %}
 
-
-{% endblock %}
