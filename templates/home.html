@@ -1,13 +1,9 @@
 {% extends "layout.html" %}
 
 {% block title %}Home{% endblock %}
-
 {% block content %}
-<!--
 
-        {{ post }}
-        {{newc}}
--->
+
 		<script>
 $(document).ready(function() {
   $('.navbar-toggle').on('click', function() {
@@ -16,19 +12,14 @@ $(document).ready(function() {
   });
 });
 </script>
-
-<!--picture slides-->
 <div class="container">
   <h2>Popular</h2>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
     </ol>
-
-    <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
         <img id="1x2p" src="https://i5.walmartimages.com/asr/35cf7368-4702-4a00-9453-5b9b78c28cd7.7726488cb8ce902dd88a98f5bced22a9.jpeg" alt="self-stirring mug" >
@@ -54,8 +45,6 @@ $(document).ready(function() {
         </div>
       </div>
     </div>
-
-    <!-- Left and right controls -->
     <a class="left carousel-control" href="#myCarousel" data-slide="prev">
       <span class="glyphicon glyphicon-chevron-left"></span>
       <span class="sr-only">Previous</span>
@@ -68,141 +57,82 @@ $(document).ready(function() {
 </div>
 
 
-<!--set 1-->
-<script>
-$(document).ready(function(){
-    $(".butcart").click(function(){
-    let value = this;
-        $("#cartnum").load('/addtoCart', {"Cart":value.previousElementSibling.value})
-    });
-});
-</script>
+<!--items-->
 <div class="row">
   <div class="column">
     <div class="product">
-		  <img id="pics" src="https://prang.com/wp-content/uploads/2019/05/15083_Prang_1ct_Back_2000x2000_07.18.png" alt="non-stick glue stick">
-		  <h3>Non-stick glue stick</h3>
-		  <p>Brand: Mixson</p>
-		  <p class="price">$9.99</p>
-		  <p class="description">A unique adhesive product offered by the brand Mixson</p>
-          <input type="hidden" id="test" name="Item" value="6462a078ad4676a9ee5036fd">
-          <button class="butcart">Add to Cart<i class="fa fa-shopping-cart"></i></button>
+		  <a href="/glue"><img id="pics" src="https://prang.com/wp-content/uploads/2019/05/71q4Ss64mOL._SL1500_.jpg" alt="non-stick glue stick"></a>
+		  <h3><a id="hyper" href="/glue">Non-stick glue stick</a></h3>
+		  <p class="price"><a id="hyper" href="/glue">$2.99</a></p>
     </div>
   </div>
   <div class="column">
     <div class="product">
-		  <img id="pics" src="https://sc04.alicdn.com/kf/H87587cb9f0e7434b954f0d7fa6be7bcdD.jpg" alt="electric spaghetti twirling fork">
-		  <h3>Electric spaghetti twirling fork</h3>
-		  <p>Brand: Forkle</p>
-		  <p class="price">$19.99</p>
-		  <p class="description">Easy to use!</p>
-          <input type="hidden" name="Item" value="6462a110ad4676a9ee5036fe">
-          <button class="butcart">Add to Cart<i class="fa fa-shopping-cart"></i></button>
+		  <a href="/fork"><img id="pics" src="https://sc04.alicdn.com/kf/H87587cb9f0e7434b954f0d7fa6be7bcdD.jpg" alt="electric spaghetti twirling fork"></a>
+		  <h3><a id="hyper" href="/fork">Electric spaghetti twirling fork</a></h3>
+		  <p class="price"><a id="hyper" href="/fork">$19.99</a></p>
+
     </div>
   </div>
   <div class="column">
     <div class="product">
-		  <img id="pics" src="https://images.thdstatic.com/productImages/fde3e9e0-1ba8-4d1f-bc2e-cba03cb63d82/svn/ivation-cocktail-sets-ivawineset05-64_1000.jpg" alt="electric wine bottle opener with LED light show" >
-		  <h3>Electric wine bottle opener with LED light show</h3>
-		  <p>Brand: Whine</p>
-		  <p class="price">$29.99</p>
-		  <p class="description">Enjoy the light show!</p>
-          <input type="hidden" name="Item" value="6462a16fad4676a9ee5036ff">
-          <button class="butcart">Add to Cart<i class="fa fa-shopping-cart"></i></button>
+		  <a href="/wine"><img id="pics" src="https://images.thdstatic.com/productImages/fde3e9e0-1ba8-4d1f-bc2e-cba03cb63d82/svn/ivation-cocktail-sets-ivawineset05-64_1000.jpg" alt="electric wine bottle opener with LED light show" ></a>
+		  <h3><a id="hyper" href="/wine">Electric wine bottle opener with LED light show</a></h3>
+		  <p class="price"><a id="hyper" href="/wine">$29.99</a></p>
     </div>
   </div>
   <div class="column">
     <div class="product">
-		  <img id="pics" src="https://m.media-amazon.com/images/I/71DefbI6GBL.jpg" alt="Wi-Fi-connected smart toaster" >
-		  <h3>Wi-Fi-connected smart toaster</h3>
-		  <p>Brand: Evolution</p>
-		  <p class="price">$49.99</p>
-		  <p class="description">More technology for your screenagers!</p>
-          <input type="hidden" name="Item" value="6463da87c0b3d1b9cfa0c996">
-          <button class="butcart">Add to Cart<i class="fa fa-shopping-cart"></i></button>
+		  <a href="/toaster"><img id="pics" src="https://m.media-amazon.com/images/I/71DefbI6GBL.jpg" alt="Wi-Fi-connected smart toaster" ></a>
+		  <h3><a id="hyper" href="/toaster">Wi-Fi-connected smart toaster</a></h3>
+		  <p class="price"><a id="hyper" href="/toaster">$49.99</a></p>
     </div>
   </div>
   <div class="column">
     <div class="product">
-		  <img id="pics" src="https://nationaltoday.com/wp-content/uploads/2021/08/National-Pet-Rock-Day.jpg" alt="Pet Rock" >
-		  <h3>Pet Rock</h3>
-		  <p>Brand: Pet Rock!!</p>
-		  <p class="price">$9.99</p>
-		  <p class="description">Pet Rock!!!</p>
-          <input type="hidden" name="Item" value="6463dac5c0b3d1b9cfa0c997">
-          <button class="butcart">Add to Cart<i class="fa fa-shopping-cart"></i></button>
+		  <a id="hyper" href="/rock"><img id="pics" src="https://nationaltoday.com/wp-content/uploads/2021/08/National-Pet-Rock-Day.jpg" alt="Pet Rock" ></a>
+		  <h3><a id="hyper" href="/rock">Pet Rock</a></h3>
+		  <p class="price"><a id="hyper" href="/rock">$9.99</a></p>
     </div>
   </div>
   </div>
-<!-- Set 2 -->
 <div class="row">
   <div class="column">
     <div class="product">
-      <img id="pics" src="https://www.greatpacificpackaging.com/image/cache/catalog/product/6-oz-glass-jar-smooth-black-lid-1000x1000.jpg" alt="A jar of expired air freshener">
-      <h3>A jar of expired air freshener</h3>
-      <p>Brand: O'Hare</p>
-      <p class="price">$1.99</p>
-      <p class="description">The element of surprise</p>
-      <input type="hidden" name="Item" value="6463db21c0b3d1b9cfa0c999">
-      <button class="butcart">Add to Cart<i class="fa fa-shopping-cart"></i></button>
+     <a id="hyper" href="/air"><img id="pics" src="https://www.greatpacificpackaging.com/image/cache/catalog/product/6-oz-glass-jar-smooth-black-lid-1000x1000.jpg" alt="A jar of expired air freshener"></a>
+      <h3><a id="hyper" href="/air">A jar of expired air freshener</a></h3>
+      <p class="price"><a id="hyper" href="/air">$1.99</a></p>
     </div>
   </div>
   
   <div class="column">
     <div class="product">
-      <img id="pics" src="https://kamami.pl/39469-home_default/big-round-push-button-a-large-round-button-with-led-backlight-100mm-red.jpg" alt="The Instant Excuse Button">
-      <h3>The "Instant Excuse" Button</h3>
-      <p>Brand: ExcuseMe</p>
-      <p class="price">$5.99</p>
-      <p class="description">You are excused</p>
-      <input type="hidden" name="Item" value="6463dd6f63891d24ea758769">
-      <button class="butcart">Add to Cart<i class="fa fa-shopping-cart"></i></button>
+      <a id="hyper" href="/excuse"><img id="pics" src="https://kamami.pl/39469-home_default/big-round-push-button-a-large-round-button-with-led-backlight-100mm-red.jpg" alt="The Instant Excuse Button"></a>
+      <h3><a id="hyper" href="/excuse">The "Instant Excuse" Button</a></h3>
+      <p class="price"><a id="hyper" href="/excuse">$5.99</a></p>
     </div>
   </div>
   <div class="column">
     <div class="product">
-      <img id="pics" src="https://cdn.shopify.com/s/files/1/0342/7431/2325/products/christmas-story-bunny-slippers-1-1000-web_1000x.jpg" alt="Squeaky Slippers">
-      <h3>Squeaky Slippers</h3>
-      <p>Brand: Squeaky</p>
-      <p class="price">$9.99</p>
-      <p class="description">Feature a soft and comfortable sole for a cozy fit</p>
-      <input type="hidden" name="Item" value="6463dbdb63891d24ea758766">
-      <button class="butcart">Add to Cart<i class="fa fa-shopping-cart"></i></button>
+      <a id="hyper" href="/slippers"><img id="pics" src="https://cdn.shopify.com/s/files/1/0342/7431/2325/products/christmas-story-bunny-slippers-1-1000-web_1000x.jpg" alt="Squeaky Slippers"></a>
+      <h3><a id="hyper" href="/slippers">Squeaky Slippers</a></h3>
+      <p class="price"><a id="hyper" href="/slippers">$9.99</a></p>
     </div>
   </div>
   <div class="column">
     <div class="product">
-      <img id="pics" src="https://cdn.shopify.com/s/files/1/0342/7431/2325/products/christmas-story-bunny-slippers-1-1000-web_1000x.jpg" alt="Squeaky Slippers">
-      <h3>Squeaky Slippers</h3>
-      <p>Brand: Squeaky</p>
-      <p class="price">$9.99</p>
-      <p class="description">Feature a soft and comfortable sole for a cozy fit</p>
-      <input type="hidden" name="Item" value="6463dbdb63891d24ea758766">
-      <button class="butcart">Add to Cart<i class="fa fa-shopping-cart"></i></button>
+      <a id="hyper" href="/fish"><img id="pics" src="https://m.media-amazon.com/images/I/814wCc4XY5L._AC_UY575_.jpg" alt="Fish Slippers"></a>
+      <h3><a id="hyper" href="/fish">Fish Slippers</a></h3>
+      <p class="price"><a id="hyper" href="/fish">$23</a></p>
     </div>
   </div>
   <div class="column">
     <div class="product">
-      <img id="pics" src="https://m.media-amazon.com/images/I/814wCc4XY5L._AC_UY575_.jpg" alt="Fish Slippers">
-      <h3>Fish Slippers</h3>
-      <p>Brand: Coddie</p>
-      <p class="price">$23</p>
-      <p class="description">Side effect: your toe gonna smell fishy</p>
-      <input type="hidden" name="Item" value="6463dc1f63891d24ea758767">
-      <button class="butcart">Add to Cart<i class="fa fa-shopping-cart"></i></button>
-    </div>
-  </div>
-  <div class="column">
-    <div class="product">
-      <img id="pics" src="https://m.media-amazon.com/images/I/41W+hGFFGnL.jpg" alt="Giant Googly Eyes">
-      <h3>Giant Googly Eyes</h3>
-      <p>Brand: Watchers</p>
-      <p class="price">$6.99</p>
-      <p class="description">Watchin'</p>
-      <input type="hidden" name="Item" value="6463dc6463891d24ea758768">
-      <button class="butcart">Add to Cart<i class="fa fa-shopping-cart"></i></button>
+      <a id="hyper" href="/eyes"><img id="pics" src="https://m.media-amazon.com/images/I/41W+hGFFGnL.jpg" alt="Giant Googly Eyes"></a>		
+      <h3><a id="hyper" href="/eyes">Giant Googly Eyes</a></h3>
+      <p class="price"><a id="hyper" href="/eyes">$6.99</a></p>
     </div>
   </div>
 </div>
-
 {% endblock %}
+
