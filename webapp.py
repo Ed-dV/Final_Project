@@ -114,7 +114,16 @@ def authorized():
 @github.tokengetter
 def get_github_oauth_token():
     return session['github_token']
+''''
+Items
+'''  
+@app.route('/glue')
+def glue():
+    return render_template('glue.html')
 
+
+    
+ 
 @app.route('/addtoCart', methods=["GET", "POST"])
 def addtoCart():
     collection.update_one({'User': session['user_data']['id']}, {'$push':{"Item-Name":ObjectId(request.form['Cart'])}})
@@ -129,6 +138,7 @@ def finalCart():
         finalCart= finalCart + Markup('<td>' + str(item['Price']) + '</td> </tr>')
     finalCart= finalCart + Markup('</table>')
     return finalCart
+
 
 if __name__ == '__main__':
     app.run()
