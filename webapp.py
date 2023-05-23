@@ -122,11 +122,14 @@ def addtoCart():
     return str(len(cart['Item-Name']))
     
 def finalCart():  
-    finalCart=Markup('<table>')
+    finalCart=Markup('<table> <tr> <th> Item </th> <th> Price </th> </tr>')
+    total=0
     for element in collection.find_one({'User': session['user_data']['id']})['Item-Name']:
         item = collection2.find_one({'_id': ObjectId(str(element))})
-        finalCart= finalCart + Markup('<th> Item </th> <th> Price </th> <tr> <td>' + item['Item-Name'] + '</td>')
+        finalCart= finalCart + Markup('<tr> <td>' + item['Item-Name'] + '</td>')
         finalCart= finalCart + Markup('<td>' + str(item['Price']) + '</td> </tr>')
+        total= total + item['Price']
+    finalCart= finalCart + Markup('<tr><td><b>Total</b></td><td>' + str(total) + '</td> </tr>')
     finalCart= finalCart + Markup('</table>')
     return finalCart
 
@@ -136,7 +139,7 @@ def emptyCart():
     one = ({'User': session['user_data']['id']})
     newCart = {"$set": {"Item-Name": [] } }
     collection.update_one(one, newCart)
-    return redirect('/Cart')
+    return redirect('/')
 
 
 if __name__ == '__main__':

@@ -8,14 +8,13 @@
 
   <h1>Shopping Cart</h1>
   
-  <div>
-    <h3>Items Price</h3>
-  </div> 
  {{ cart }}
 	<form action="/info1" method="POST">
     <input type="submit" value="Proceed To Checkout"/>
    </form> 
 
-
+    <form action="/emptyCart", method='GET'>
+    <input type="submit" value="Empty Cart">
+    </form>
 
 {% endblock %}
