@@ -121,6 +121,48 @@ Items
 def glue():
     return render_template('glue.html')
 
+@app.route('/fork')
+def fork():
+    return render_template('fork.html')
+
+
+@app.route('/wine')
+def wine():
+    return render_template('wine.html')
+
+
+@app.route('/toaster')
+def toaster():
+    return render_template('toaster.html')
+
+
+@app.route('/rock')
+def rock():
+    return render_template('rock.html')
+
+@app.route('/air')
+def air():
+    return render_template('air.html')
+
+
+@app.route('/excuse')
+def excuse():
+    return render_template('excuse.html')
+
+@app.route('/slippers')
+def slippers():
+    return render_template('slippers.html')
+
+@app.route('/fish')
+def fish():
+    return render_template('fish.html')
+
+
+@app.route('/eyes')
+def eyes():
+    return render_template('eyes.html')
+
+
 
     
  
