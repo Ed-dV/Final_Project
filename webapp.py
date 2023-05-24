@@ -121,44 +121,44 @@ Items
 def glue():
     return render_template('glue.html')
 
-@app.route('/fork')
+@app.route('/fork', methods=["GET", "POST"])
 def fork():
     return render_template('fork.html')
 
 
-@app.route('/wine')
+@app.route('/wine', methods=["GET", "POST"])
 def wine():
     return render_template('wine.html')
 
 
-@app.route('/toaster')
+@app.route('/toaster', methods=["GET", "POST"])
 def toaster():
     return render_template('toaster.html')
 
 
-@app.route('/rock')
+@app.route('/rock', methods=["GET", "POST"])
 def rock():
     return render_template('rock.html')
 
-@app.route('/air')
+@app.route('/air', methods=["GET", "POST"])
 def air():
     return render_template('air.html')
 
 
-@app.route('/excuse')
+@app.route('/excuse', methods=["GET", "POST"])
 def excuse():
     return render_template('excuse.html')
 
-@app.route('/slippers')
+@app.route('/slippers', methods=["GET", "POST"])
 def slippers():
     return render_template('slippers.html')
 
-@app.route('/fish')
+@app.route('/fish', methods=["GET", "POST"])
 def fish():
     return render_template('fish.html')
 
 
-@app.route('/eyes')
+@app.route('/eyes', methods=["GET", "POST"])
 def eyes():
     return render_template('eyes.html')
 
