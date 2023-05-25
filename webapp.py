@@ -71,9 +71,22 @@ def info2():
 def about():
     return render_template('about.html')
     
+@app.route('/Fusion')
+def Fusion():
+    return render_template('Fusion.html')
+    
+@app.route('/fusiondone', methods=['POST'])
+def fusiondone():
+    collection.update_one({'User': session['user_data']['id']}, {'$set':{"AF":True}})
+    return render_template('fusiondone.html')
+    
 @app.route('/complete', methods=['POST'])
 def complete():
-    return render_template('complete.html')
+    if collection.find_one({'User': session['user_data']['AF']}) == True:
+        ship= "2 days!"
+    else:
+        ship="39 years."
+    return render_template('complete.html', shipping = ship)
 
 @app.route('/Cart')
 def Cart():
