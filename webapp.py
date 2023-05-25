@@ -103,7 +103,7 @@ def authorized():
             #pprint.pprint(vars(github['api/2/accounts/profile/']))
             cart = collection.find_one({'User': session['user_data']['id']})
             if cart is None:
-                collection.insert_one({'User':session['user_data']['id'], 'Item-Name':[]})
+                collection.insert_one({'User':session['user_data']['id'], 'Item-Name':[], 'AF': False})
             flash('You were successfully logged in as ' + session['user_data']['login'] + '.')
         except Exception as inst:
             session.clear()
@@ -161,9 +161,10 @@ def fish():
 @app.route('/eyes', methods=["GET", "POST"])
 def eyes():
     return render_template('eyes.html')
-
-
-
+    
+'''
+End of Items
+'''
     
 @app.route('/addtoCart', methods=["GET", "POST"])
 def addtoCart():
