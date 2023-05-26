@@ -3,20 +3,26 @@ const zoomOverlay = document.createElement("div");
 zoomOverlay.className = "zoom-overlay";
 const zoomedImage = document.createElement("img");
 zoomedImage.className = "zoomed-image";
+
 var buttons = document.querySelectorAll(".btn-outline-primary");
+
 productImage.addEventListener("mouseover", function() {
-  zoomedImage.src = productImage.src;
-  zoomOverlay.appendChild(zoomedImage);
-  document.body.appendChild(zoomOverlay);
+  if (!zoomOverlay.contains(zoomedImage)) {
+    zoomedImage.src = productImage.src;
+    zoomOverlay.appendChild(zoomedImage);
+    document.body.appendChild(zoomOverlay);
+  }
   zoomOverlay.style.display = "block";
 });
 
-productImage.addEventListener("mouseout", function() {
+zoomOverlay.addEventListener("mouseout", function() {
   zoomOverlay.style.display = "none";
   zoomOverlay.innerHTML = "";
 });
+
 function changeImage(event, imageUrl) {
-   document.getElementById('product-image').src = imageUrl;
+  var productImage = document.getElementById('product-image');
+  productImage.src = imageUrl;
 }
 
   
