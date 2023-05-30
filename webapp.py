@@ -103,7 +103,7 @@ def authorized():
             #pprint.pprint(vars(github['api/2/accounts/profile/']))
             cart = collection.find_one({'User': session['user_data']['id']})
             if cart is None:
-                collection.insert_one({'User':session['user_data']['id'], 'Item-Name':[]})
+                collection.insert_one({'User':session['user_data']['id'], 'Item-Name':[], 'AF': False})
             flash('You were successfully logged in as ' + session['user_data']['login'] + '.')
         except Exception as inst:
             session.clear()
@@ -117,70 +117,83 @@ def get_github_oauth_token():
 ''''
 Items
 '''  
-@app.route('/glue')
+@app.route('/glue', methods=["GET", "POST"])
 def glue():
     return render_template('glue.html')
 
-@app.route('/fork')
+@app.route('/fork', methods=["GET", "POST"])
 def fork():
     return render_template('fork.html')
 
 
-@app.route('/wine')
+@app.route('/wine', methods=["GET", "POST"])
 def wine():
     return render_template('wine.html')
 
 
-@app.route('/toaster')
+@app.route('/toaster', methods=["GET", "POST"])
 def toaster():
     return render_template('toaster.html')
 
 
-@app.route('/rock')
+@app.route('/rock', methods=["GET", "POST"])
 def rock():
     return render_template('rock.html')
 
-@app.route('/air')
+@app.route('/air', methods=["GET", "POST"])
 def air():
     return render_template('air.html')
 
 
-@app.route('/excuse')
+@app.route('/excuse', methods=["GET", "POST"])
 def excuse():
     return render_template('excuse.html')
 
-@app.route('/slippers')
+@app.route('/slippers', methods=["GET", "POST"])
 def slippers():
     return render_template('slippers.html')
 
-@app.route('/fish')
+@app.route('/fish', methods=["GET", "POST"])
 def fish():
     return render_template('fish.html')
 
 
-@app.route('/eyes')
+@app.route('/eyes', methods=["GET", "POST"])
 def eyes():
     return render_template('eyes.html')
-
-
-
     
- 
+'''
+End of Items
+'''
+    
 @app.route('/addtoCart', methods=["GET", "POST"])
 def addtoCart():
     collection.update_one({'User': session['user_data']['id']}, {'$push':{"Item-Name":ObjectId(request.form['Cart'])}})
     cart=collection.find_one({'User': session['user_data']['id']})
     return str(len(cart['Item-Name']))
     
-def finalCart():  
-    finalCart=Markup('<table>')
-    for element in collection.find_one({'User': session['user_data']['id']})['Item-Name']:
-        item = collection2.find_one({'_id': ObjectId(str(element))})
-        finalCart= finalCart + Markup('<th> Item </th> <th> Price </th> <tr> <td>' + item['Item-Name'] + '</td>')
-        finalCart= finalCart + Markup('<td>' + str(item['Price']) + '</td> </tr>')
-    finalCart= finalCart + Markup('</table>')
-    return finalCart
-
+def finalCart(): 
+    y = collection.find_one({'User': session['user_data']['id']})['Item-Name']
+    if len(y) == 0:
+        return('Your Amazone Cart is Empty')
+    else:
+        finalCart=Markup('<table> <tr> <th> Item </th> <th> Price </th> </tr>')
+        total=0
+        for element in y:
+            item = collection2.find_one({'_id': ObjectId(str(element))})
+            finalCart= finalCart + Markup('<tr> <td>' + item['Item-Name'] + '</td>')
+            finalCart= finalCart + Markup('<td>' + str(item['Price']) + '</td> </tr>')
+            total= total + item['Price']
+        finalCart= finalCart + Markup('<tr><td><b>Total</b></td><td>' + str(total) + '</td> </tr>')
+        finalCart= finalCart + Markup('</table>')
+        return finalCart
+  
+@app.route ('/emptyCart', methods=["GET", "POST"])
+def emptyCart():
+    one = ({'User': session['user_data']['id']})
+    newCart = {"$set": {"Item-Name": [] } }
+    collection.update_one(one, newCart)
+    return redirect('/')
 
 if __name__ == '__main__':
     app.run()

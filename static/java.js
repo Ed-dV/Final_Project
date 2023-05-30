@@ -39,4 +39,9 @@ function changeImage(event, imageUrl) {
     popup.classList.toggle("show");
   }
   
-
+$(document).ready(function(){
+    $(".butcart").click(function(){
+    let value = this;
+        $("#cartnum").load('/addtoCart', {"Cart":value.previousElementSibling.value})
+    });
+});
