@@ -1,5 +1,6 @@
-
+lang="en"
 #content {
+	
      margin-left: 20px;
 }
 
@@ -191,18 +192,6 @@ a:hover {
 }
 
 
-#hyper,
-a {
-  text-decoration: none;
-  color: black;
-}
-
-#hyper:hover,
-a:hover {
-  color: orange;
-  background-color: transparent;
-}
-
 .zoom {
   position: relative;
 }
@@ -294,13 +283,10 @@ a:hover {
 .thicker-hr {
   height: 1px;
   background-color: black;
-  width: 700px;
+  width: 1000px;
 }
 
- .btn-outline-primary.active {
-    background-color: white;
-    border-color: coral;
-  }
+
   /*list */
   ul.circle {
   list-style-type: circle;
@@ -359,17 +345,7 @@ a:hover {
   to {opacity:1 ;}
 }
 
-#hyperFusion,
-a {
-  text-decoration: none;
-  color: #60bbf7;
-}
 
-#hyperFusion:hover,
-a:hover {
-  color: orange;
-  background-color: transparent;
-}
 
 #free{
 	color: #60bbf7;
@@ -389,7 +365,7 @@ a:hover {
 .box{
   background-color:white;
   width: 300px;
-  height:700px;
+  height:400px;
   border: 2px solid grey;
   padding: 50px;
   border-radius: 15px;
@@ -423,7 +399,6 @@ a:hover {
 	color:#6bde00;
 }
 
-
 .moveBox{
 	position: relative;
 	left: 50px; 
@@ -442,9 +417,124 @@ a:hover {
     color: white;
 }
 
+
 #fdesc{
 	text-align:center;
 	font-size:30px;
 }
 
+.btn-outline-primary {
+  border: 1px solid #000000;
+  color: #000000;
+  background-color: transparent;
+  padding: 0.5rem 1rem;
+  font-size: 16px;
+  cursor: pointer;
+}
 
+.btn-outline-primary.active {
+  background-color: white;
+  border-color: coral;
+}
+
+
+#hyperFusion1,
+#hyperFusion2,
+a {
+  text-decoration: none;
+  color: #60bbf7;
+}
+
+#hyperFusion1:hover,
+#hyperFusion2:hover,
+a:hover {
+  color: orange;
+  background-color: transparent;
+}
+
+
+
+#pics1,
+#pics2,
+#pics3,
+#pics4,
+#pics5,
+#pics6,
+#pics7,
+#pics8,
+#pics9,
+#pics10
+{
+	width:300px;
+	height:300px;
+	
+}
+
+#hyper1,
+#hyper2,
+#hyper3,
+#hyper4,
+#hyper5,
+#hyper6,
+#hyper7,
+#hyper8,
+#hyper9,
+#hyper10,
+a {
+  text-decoration: none;
+  color: black;
+}
+
+#hyper1:hover,
+#hyper2:hover,
+#hyper3:hover,
+#hyper4:hover,
+#hyper5:hover,
+#hyper6:hover,
+#hyper7:hover,
+#hyper8:hover,
+#hyper9:hover,
+#hyper10:hover,
+a:hover{
+  color: orange;
+  background-color: transparent;
+}
+
+#hyperSlide1,
+#hyperSlide2,
+#hyperSlide3,
+a {
+  text-decoration: none;
+  color: white;
+}
+#hyperSlide1:hover,
+#hyperSlide2:hover,
+#hyperSlide3:hover,
+a:hover{
+  color: orange;
+  background-color: transparent;
+}
+#hyperFusionSlide1,
+#hyperFusionSlide2,
+a {
+  text-decoration: none;
+  color:#60bbf7;
+}
+
+#hyperFusionSlide1:hover,
+#hyperFusionSlide2:hover,
+a:hover{
+  color: orange;
+  background-color: transparent;
+}
+.moveDe{
+	padding:20px;
+}
+
+#carousel-image-1,
+#carousel-image-2,
+#carousel-image-3,
+a {
+  text-decoration: none;
+  color: black;
+}

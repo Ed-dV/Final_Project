@@ -2,9 +2,7 @@
 
 {% block title %}Home{% endblock %}
 {% block content %}
-
-
-		<script>
+<script>
 $(document).ready(function() {
   $('.navbar-toggle').on('click', function() {
     $(this).toggleClass('active');
@@ -22,25 +20,25 @@ $(document).ready(function() {
     </ol>
     <div class="carousel-inner">
       <div class="item active">
-        <img id="1x2p" src="https://i5.walmartimages.com/asr/35cf7368-4702-4a00-9453-5b9b78c28cd7.7726488cb8ce902dd88a98f5bced22a9.jpeg" alt="self-stirring mug" >
+        <a  href="/mug"><img id="carousel-image-1" src="https://m.media-amazon.com/images/I/61f5jANqdzL._AC_SL1263_.jpg" alt="self-stirring mug"></a>
         <div class="carousel-caption">
-          <h3>self-stirring mug</h3>
+          <h3><a id="hyperSlide1" href="/mug">Self-stirring mug</a></h3>
           <p>An intriguing object with a distinct shape</p>
         </div>
       </div>
 
       <div class="item">
-        <img id="1x2p" src="https://m.media-amazon.com/images/I/81phLlH6ozL.jpg" alt="Silent alarm clock" >
+        <a  href="/clock"><img id="carousel-image-2" src="https://m.media-amazon.com/images/I/61B4TtwItQL._AC_SL1370_.jpg" alt="Children's Alarm"></a>
         <div class="carousel-caption">
-          <h3>Silent Alarm Clock</h3>
-          <p>It resembles a standard clock but lacks one key feature—it operates without making any sound</p>
+          <h3><a id="hyperSlide2" href="/clock">Children's Alarm Clock</a></h3>
+          <p>Nya~~~~~~~~~~~~~~~~~~~~~</p>
         </div>
       </div>
     
       <div class="item">
-        <img id="1x2p" src="https://www.shopko.com/wp-content/uploads/2020/09/DSC09813_6.jpg" alt="clear sunglasses" >
+        <a  href="/clear"><img id="carousel-image-3" src="https://www.shopko.com/wp-content/uploads/2020/09/DSC09813_6.jpg" alt="clear sunglasses"></a>
         <div class="carousel-caption">
-          <h3>Clear Sunglasses</h3>
+          <h3><a id="hyperSlide3" href="/clear">Clear Sunglasses</a></h3>
           <p>"It looks cool"</p>
         </div>
       </div>
@@ -57,6 +55,7 @@ $(document).ready(function() {
 </div>
 
 
+<!--items-->
 <!--set 1-->
 <script>
 $(document).ready(function(){
@@ -66,69 +65,68 @@ $(document).ready(function(){
     });
 });
 </script>
-<!--items-->
 <div class="row">
   <div class="column">
     <div class="product">
-		  <a href="/glue"><img id="pics" src="https://prang.com/wp-content/uploads/2019/05/71q4Ss64mOL._SL1500_.jpg" alt="non-stick glue stick"></a>
-		  <h3><a id="hyper" href="/glue">Non-stick glue stick</a></h3>
+		  <a  href="/glue"><img id="pics1" src="https://prang.com/wp-content/uploads/2019/05/71q4Ss64mOL._SL1500_.jpg" alt="non-stick glue stick"></a>
+		  <h3><a id="hyper1" href="/glue">Non-stick glue stick</a></h3>
     </div>
   </div>
   <div class="column">
     <div class="product">
-		  <a href="/fork"><img id="pics" src="https://sc04.alicdn.com/kf/H87587cb9f0e7434b954f0d7fa6be7bcdD.jpg" alt="electric spaghetti twirling fork"></a>
-		  <h3><a id="hyper" href="/fork">Electric spaghetti twirling fork</a></h3>
+		  <a  href="/fork"><img id="pics2" src="https://sc04.alicdn.com/kf/H87587cb9f0e7434b954f0d7fa6be7bcdD.jpg" alt="electric spaghetti twirling fork"></a>
+		  <h3><a id="hyper2" href="/fork">Electric spaghetti twirling fork</a></h3>
     </div>
   </div>
   <div class="column">
     <div class="product">
-		  <a href="/wine"><img id="pics" src="https://images.thdstatic.com/productImages/fde3e9e0-1ba8-4d1f-bc2e-cba03cb63d82/svn/ivation-cocktail-sets-ivawineset05-64_1000.jpg" alt="electric wine bottle opener with LED light show" ></a>
-		  <h3><a id="hyper" href="/wine">Electric wine bottle opener with LED light show</a></h3>
+		  <a href="/wine"><img id="pics3" src="https://images.thdstatic.com/productImages/fde3e9e0-1ba8-4d1f-bc2e-cba03cb63d82/svn/ivation-cocktail-sets-ivawineset05-64_1000.jpg" alt="electric wine bottle opener with LED light show" ></a>
+		  <h3><a id="hyper3" href="/wine">Electric wine bottle opener with LED light show</a></h3>
     </div>
   </div>
   <div class="column">
     <div class="product">
-		  <a href="/toaster"><img id="pics" src="https://m.media-amazon.com/images/I/71DefbI6GBL.jpg" alt="Wi-Fi-connected smart toaster" ></a>
-		  <h3><a id="hyper" href="/toaster">Wi-Fi-connected smart toaster</a></h3>
+		  <a href="/toaster"><img id="pics4" src="https://m.media-amazon.com/images/I/71DefbI6GBL.jpg" alt="Wi-Fi-connected smart toaster" ></a>
+		  <h3><a id="hyper4" href="/toaster">Wi-Fi-connected smart toaster</a></h3>
     </div>
   </div>
   <div class="column">
     <div class="product">
-		  <a id="hyper" href="/rock"><img id="pics" src="https://nationaltoday.com/wp-content/uploads/2021/08/National-Pet-Rock-Day.jpg" alt="Pet Rock" ></a>
-		  <h3><a id="hyper" href="/rock">Pet Rock</a></h3>
+		  <a href="/rock"><img id="pics5" src="https://nationaltoday.com/wp-content/uploads/2021/08/National-Pet-Rock-Day.jpg" alt="Pet Rock" ></a>
+		  <h3><a id="hyper5" href="/rock">Pet Rock</a></h3>
     </div>
   </div>
   </div>
 <div class="row">
   <div class="column">
     <div class="product">
-     <a id="hyper" href="/air"><img id="pics" src="https://www.greatpacificpackaging.com/image/cache/catalog/product/6-oz-glass-jar-smooth-black-lid-1000x1000.jpg" alt="A jar of expired air freshener"></a>
-      <h3><a id="hyper" href="/air">A jar of expired air freshener</a></h3>
+     <a href="/air"><img id="pics6" src="https://www.greatpacificpackaging.com/image/cache/catalog/product/6-oz-glass-jar-smooth-black-lid-1000x1000.jpg" alt="A jar of expired air freshener"></a>
+      <h3><a id="hyper6" href="/air">A jar of expired air freshener</a></h3>
     </div>
   </div>
   
   <div class="column">
     <div class="product">
-      <a id="hyper" href="/excuse"><img id="pics" src="https://kamami.pl/39469-home_default/big-round-push-button-a-large-round-button-with-led-backlight-100mm-red.jpg" alt="The Instant Excuse Button"></a>
-      <h3><a id="hyper" href="/excuse">The "Instant Excuse" Button</a></h3>
+      <a href="/excuse"><img id="pics7" src="https://kamami.pl/39469-home_default/big-round-push-button-a-large-round-button-with-led-backlight-100mm-red.jpg" alt="The Instant Excuse Button"></a>
+      <h3><a id="hyper7" href="/excuse">The "Instant Excuse" Button</a></h3>
     </div>
   </div>
   <div class="column">
     <div class="product">
-      <a id="hyper" href="/slippers"><img id="pics" src="https://cdn.shopify.com/s/files/1/0342/7431/2325/products/christmas-story-bunny-slippers-1-1000-web_1000x.jpg" alt="Squeaky Slippers"></a>
-      <h3><a id="hyper" href="/slippers">Squeaky Slippers</a></h3>
+      <a href="/slippers"><img id="pics8" src="https://cdn.shopify.com/s/files/1/0342/7431/2325/products/christmas-story-bunny-slippers-1-1000-web_1000x.jpg" alt="Squeaky Slippers"></a>
+      <h3><a id="hyper8" href="/slippers">Squeaky Slippers</a></h3>
     </div>
   </div>
   <div class="column">
     <div class="product">
-      <a id="hyper" href="/fish"><img id="pics" src="https://m.media-amazon.com/images/I/814wCc4XY5L._AC_UY575_.jpg" alt="Fish Slippers"></a>
-      <h3><a id="hyper" href="/fish">Fish Slippers</a></h3>
+      <a href="/fish"><img id="pics9" src="https://m.media-amazon.com/images/I/814wCc4XY5L._AC_UY575_.jpg" alt="Fish Slippers"></a>
+      <h3><a id="hyper9" href="/fish">Fish Slippers</a></h3>
     </div>
   </div>
   <div class="column">
     <div class="product">
-      <a id="hyper" href="/eyes"><img id="pics" src="https://m.media-amazon.com/images/I/41W+hGFFGnL.jpg" alt="Giant Googly Eyes"></a>		
-      <h3><a id="hyper" href="/eyes">Giant Googly Eyes</a></h3>
+      <a  href="/eyes"><img id="pics10" src="https://m.media-amazon.com/images/I/41W+hGFFGnL.jpg" alt="Giant Googly Eyes"></a>		
+      <h3><a id="hyper10" href="/eyes">Giant Googly Eyes</a></h3>
     </div>
   </div>
 </div>
