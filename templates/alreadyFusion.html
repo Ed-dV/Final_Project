@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<p id="fdesc"> It looks like you're already a member of Amazon Fusion. Would you like to cancel your subscription?</p>
+<br><br>
+<form action="/whyCancel" method="POST" id="fdesc">
+<input type="submit" value="Yes"/>
+
+</p>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<p id="fdesc"> Before you cancel, please fill out this optional survey.</p>
+<br><br>
+<form action="/fusionCancel" method="POST" id="fdesc">
+<p>Why are you cancelling your subscription?</p>
+<textarea id="fdesc" rows="2	" cols="50">
+</textarea>
+<br><br>
+<p>Is there anything we can change to help your experience?</p>
+<textarea id="fdesc" rows="2	" cols="50">
+</textarea>
+<br><br>
+<input type="submit" value="Confirm Cancellation"/>
+
+</p>
+{% endblock %}
