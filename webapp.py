@@ -71,13 +71,45 @@ def info2():
 def about():
     return render_template('about.html')
     
+@app.route('/Fusion')
+def Fusion():
+    if collection.find_one({'User': session['user_data']["id"]})['AF'] == True:
+        return render_template('alreadyFusion.html')
+    return render_template('Fusion.html')
+    
+@app.route('/fusiondone', methods=['POST'])
+def fusiondone():
+    collection.update_one({'User': session['user_data']['id']}, {'$set':{"AF":True}})
+    return render_template('fusiondone.html')
+    
+@app.route('/alreadyFusion', methods=['POST'])
+def alreadyFusion():
+    return render_template('alreadyFusion.html')
+
+@app.route('/whyCancel', methods=['POST'])
+def whyCancel():
+    return render_template('whyCancel.html')
+
+@app.route('/fusionCancel', methods=['POST'])
+def fusionCancel():
+    collection.update_one({'User': session['user_data']['id']}, {'$set':{"AF":False}})
+    return render_template('fusionCancel.html')
+    
 @app.route('/complete', methods=['POST'])
 def complete():
-    return render_template('complete.html')
+    if collection.find_one({'User': session['user_data']["id"]})['AF'] == True:
+        ship= "Order complete! Your items will arive in approximately 2 days!"
+    else:
+        ship="Order complete! Your items will arive in approximately 39 years."
+    return render_template('complete.html', shipping = ship)
 
 @app.route('/Cart')
 def Cart():
-    return render_template('cart.html', cart=finalCart())
+    if collection.find_one({'User': session['user_data']["id"]})['AF'] == True:
+        fus= ""
+    else:
+        fus="A $5 shipping fee has been added to your order. Sign up for Amazone Fusion to get free shipping!"
+    return render_template('cart.html', cart=finalCart(), fus=fus)
 #redirect to GitHub's OAuth page and confirm callback URL
 @app.route('/login')
 def login():   
