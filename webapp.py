@@ -161,7 +161,20 @@ def fish():
 @app.route('/eyes', methods=["GET", "POST"])
 def eyes():
     return render_template('eyes.html')
+
     
+@app.route('/mug')
+def mug():
+    return render_template('mug.html')
+    
+@app.route('/clock')
+def clock():
+    return render_template('clock.html')
+    
+@app.route('/clear')
+def clear():
+    return render_template('clear.html')
+
 '''
 End of Items
 '''

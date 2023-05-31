@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block title %}Clear Sunglasses{% endblock %}
+
+{% block content %}
+	<h3>EYLRIM Square Frame Clear Lens Glasses Non Prescription Eyeglasses</h3>
+	<div class="rowSub">
+		<div class="thumbnail-images">
+			<img id="thumbnail1" class="thumbnail" src="https://www.shopko.com/wp-content/uploads/2020/09/DSC09813_6.jpg" alt="clear 1" onmouseover="changeImage(event, 'https://www.shopko.com/wp-content/uploads/2020/09/DSC09813_6.jpg')">
+			<img id="thumbnail2" class="thumbnail" src="https://m.media-amazon.com/images/I/41RGzUm40uL._AC_UY500_.jpg" alt="clear 2" onmouseover="changeImage(event, 'https://m.media-amazon.com/images/I/41RGzUm40uL._AC_UY500_.jpg')">
+			<img id="thumbnail3" class="thumbnail" src="https://m.media-amazon.com/images/I/41qga7dz5uL._AC_UY575_.jpg" alt="clear 3" onmouseover="changeImage(event, 'https://m.media-amazon.com/images/I/41qga7dz5uL._AC_UY575_.jpg')">
+		</div>
+		<div class="product-gallery">
+			<div class="main-image">
+				<div class="zoom">
+					<div class="image-container">
+						<img id="product-image" src="https://www.shopko.com/wp-content/uploads/2020/09/DSC09813_6.jpg" alt="clear main">
+						<p id="image-caption">Roll over image to zoom in</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div>
+			<hr class="thicker-hr">
+			<h4>Price:
+				<span id="priceColor">$26.69</span>
+				Get Fast, Free Shipping with
+				<a id="hyperFusionSlide1" href="/Fusion">Amazon Fusion</a>
+				<span class="popup" onclick="myFunction()">
+					<span id="free">FREE Returns</span>
+					<span class="arrow"></span>
+					<span class="popuptext" id="myPopup">
+						Free returns are available for the shipping address you chose.
+						You can return the item for any reason in new and unused condition: no shipping charges
+					</span>
+				</span>
+			</h4>
+		<hr class="thicker-hr">
+		<h4 id="bold">Lens Width: 52 Millimeters</h4>
+		<ul class="circle">
+			<li>imported</li>
+			<li>Classic square frame design with unique rivets and soft temples for a timeless classic</li>
+			<li>The glasses feature a lightweight frame with reinforced metal hinges that are light and strong.</li>
+			<li>Clear lens 100% protection against harmful UVA/UVB rays.</li>
+			<li>You can wear it as a fashion accessory or replace these clear lenses with your lenses.</li>
+			<li>100% Satisfaction guaranteed.</li>
+		</ul>
+	</div>
+	<div class="moveBox">
+		<div class="box">
+			<h2 class="price">$26.69</h2>
+			<div class="prop">
+				<h3>Get <span class="bold">Fast, Free Shipping</span> with <a id="hyperFusionSlide2" href="/Fusion">Amazon Fusion</a></h3>
+			</div>
+			<div class="prop2">
+				<h3>Available to ship in 3-4 days</h3>
+			</div>
+			<div class="prop3">
+				<button class="butcart">Add to Cart</button>
+			</div>
+		</div>
+	</div>
+	</div>
+{% endblock %}
