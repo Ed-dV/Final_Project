@@ -1,0 +1,77 @@
+{% extends "layout.html" %}
+
+{% block title %}Self-stirring mug{% endblock %}
+{% block content %}
+	<h3>Out of the Blue Self Stirring Mug, Plastic, Stainless Steel and Wood, Black, 13.5 x 9.5 x 13 cm - Sponsored</h3>
+	<div class="rowSub">
+		<div class="thumbnail-images">
+			<img id="thumbnail1" class="thumbnail" src="https://m.media-amazon.com/images/I/61f5jANqdzL._AC_SL1263_.jpg" alt="mug 1" onmouseover="changeImage(event, 'https://m.media-amazon.com/images/I/61f5jANqdzL._AC_SL1263_.jpg')">
+			<img id="thumbnail2" class="thumbnail" src="https://m.media-amazon.com/images/I/619rZcqlM-L._AC_SL1372_.jpg" alt="mug 2" onmouseover="changeImage(event, 'https://m.media-amazon.com/images/I/619rZcqlM-L._AC_SL1372_.jpg')">
+			<img id="thumbnail3" class="thumbnail" src="https://m.media-amazon.com/images/I/61o-dJPPDeL._AC_SL1372_.jpg" alt="mug 3" onmouseover="changeImage(event, 'https://m.media-amazon.com/images/I/61o-dJPPDeL._AC_SL1372_.jpg')">
+		</div>
+		<div class="product-gallery">
+			<div class="main-image">
+				<div class="zoom">
+					<div class="image-container">
+						<img id="product-image" src="https://m.media-amazon.com/images/I/61f5jANqdzL._AC_SL1263_.jpg" alt="mug main">
+						<p id="image-caption">Roll over image to zoom in</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div>
+			<hr class="thicker-hr">
+			<h4>Price:
+			<span id="priceColor">$25.50</span>
+			Get Fast, Free Shipping with
+			<a id="hyperFusionSlide1" href="/Fusion">Amazone Fusion</a>
+			<span class="popup" onclick="myFunction()">
+			<span id="free">FREE Returns</span>
+			<span class="arrow"></span>
+			<span class="popuptext" id="myPopup">
+				Free returns are available for the shipping address you chose.
+				You can return the item for any reason in new and unused condition: no shipping charges
+			</span>
+			</span>
+			</h4>
+			<div class="moveDe">
+				<div class="row">
+					<div class="column">
+						<h4>Material</h4>
+						<h4>Colour</h4>
+						<h4>Capacity</h4>
+						<h4>Brand</h4>
+						<h4>Special feature</h4>
+					</div>
+					<div class="column">
+						<h4>Wood, Stainless Steel, Plastic</h4>
+						<h4>Black and Blue</h4>
+						<h4>350 Milliliters</h4>
+						<h4>Self Stirring</h4>
+					</div>
+				</div>
+			</div>
+			<hr class="thicker-hr">
+			<h4 id="bold">About this item</h4>
+			<ul class="circle">
+				<li>Self stirring mug</li>
+				<li>ca. 11 x 9cm</li>
+				<li>battery usage: 2x AAA</li> 
+			</ul>
+		</div>
+		<div class="moveBox">
+			<div class="box">
+				<h2 class="price">$25.50</h2>
+				<div class="prop">
+					<h3>Get <span class="bold">Fast, Free Shipping </span>with<span><a id="hyperFusionSlide2" href="/Fusion">Amazone Fusion</a></span></h3>
+				</div>
+				<div class="prop2">
+					<h3>Available to ship in 2-4 days</h3>
+				</div>
+				<div class="prop3">
+					<button class="butcart">Add to Cart</button>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

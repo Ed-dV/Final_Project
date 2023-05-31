@@ -480,7 +480,6 @@ a {
   color: black;
 }
 
-
 #hyper1:hover,
 #hyper2:hover,
 #hyper3:hover,
@@ -496,6 +495,41 @@ a:hover{
   background-color: transparent;
 }
 
+#hyperSlide1,
+#hyperSlide2,
+#hyperSlide3,
+a {
+  text-decoration: none;
+  color: white;
+}
+#hyperSlide1:hover,
+#hyperSlide2:hover,
+#hyperSlide3:hover,
+a:hover{
+  color: orange;
+  background-color: transparent;
+}
+#hyperFusionSlide1,
+#hyperFusionSlide2,
+a {
+  text-decoration: none;
+  color:#60bbf7;
+}
+
+#hyperFusionSlide1:hover,
+#hyperFusionSlide2:hover,
+a:hover{
+  color: orange;
+  background-color: transparent;
+}
 .moveDe{
 	padding:20px;
+}
+
+#carousel-image-1,
+#carousel-image-2,
+#carousel-image-3,
+a {
+  text-decoration: none;
+  color: black;
 }
