@@ -418,6 +418,11 @@ a:hover {
 }
 
 
+#fdesc{
+	text-align:center;
+	font-size:30px;
+}
+
 .btn-outline-primary {
   border: 1px solid #000000;
   color: #000000;
