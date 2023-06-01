@@ -108,7 +108,7 @@ def Cart():
     if collection.find_one({'User': session['user_data']["id"]})['AF'] == True:
         fus= ""
     else:
-        fus="A $5 shipping fee has been added to your order. Sign up for Amazone Fusion to get free shipping!"
+        fus=". A $5 shipping fee will be automatically added to your order. Sign up for Amazone Fusion to get free shipping!"
     return render_template('cart.html', cart=finalCart(), fus=fus)
 #redirect to GitHub's OAuth page and confirm callback URL
 @app.route('/login')
