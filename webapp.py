@@ -79,8 +79,11 @@ def Fusion():
     
 @app.route('/fusiondone', methods=['POST'])
 def fusiondone():
+    cpage = ''
     collection.update_one({'User': session['user_data']['id']}, {'$set':{"AF":True}})
-    return render_template('fusiondone.html')
+    if 'current page' in session:
+        cpage = session['current page']
+    return render_template('fusiondone.html', page=cpage)
     
 @app.route('/alreadyFusion', methods=['POST'])
 def alreadyFusion():
@@ -151,60 +154,72 @@ Items
 '''  
 @app.route('/glue', methods=["GET", "POST"])
 def glue():
+    session['current page']= '/glue'
     return render_template('glue.html')
 
 @app.route('/fork', methods=["GET", "POST"])
 def fork():
+    session['current page']= '/fork'
     return render_template('fork.html')
 
 
 @app.route('/wine', methods=["GET", "POST"])
 def wine():
+    session['current page']= '/wine'
     return render_template('wine.html')
 
 
 @app.route('/toaster', methods=["GET", "POST"])
 def toaster():
+    session['current page']= '/toaster'
     return render_template('toaster.html')
 
 
 @app.route('/rock', methods=["GET", "POST"])
 def rock():
+    session['current page']= '/rock'
     return render_template('rock.html')
 
 @app.route('/air', methods=["GET", "POST"])
 def air():
+    session['current page']= '/air'
     return render_template('air.html')
 
 
 @app.route('/excuse', methods=["GET", "POST"])
 def excuse():
+    session['current page']= '/excuse'
     return render_template('excuse.html')
 
 @app.route('/slippers', methods=["GET", "POST"])
 def slippers():
+    session['current page']= '/slippers'
     return render_template('slippers.html')
 
 @app.route('/fish', methods=["GET", "POST"])
 def fish():
+    session['current page']= '/fish'
     return render_template('fish.html')
 
 
 @app.route('/eyes', methods=["GET", "POST"])
 def eyes():
+    session['current page']= '/eyes'
     return render_template('eyes.html')
 
-    
 @app.route('/mug')
 def mug():
+    session['current page']= '/mug'
     return render_template('mug.html')
     
 @app.route('/clock')
 def clock():
+    session['current page']= '/clock'
     return render_template('clock.html')
     
 @app.route('/clear')
 def clear():
+    session['current page']= '/clear'
     return render_template('clear.html')
 
 '''
@@ -233,12 +248,14 @@ def finalCart():
             finalCart= finalCart + Markup('<td>' + str(item['Price']) + '</td> </tr>')
             total= total + item['Price']
             ship = ship + item['Price']
-        finalCart= finalCart + Markup('<tr><td><b>Total</b></td>') 
+        finalCart= finalCart + Markup('<tr><td><b>Total</b></td>')
         if x['AF'] == False:
-            finalCart= finalCart + Markup('<td><b>Plus Shipping</b></td></tr> <tr><td>'  + str(ship) + '</td>')
+            finalCart= finalCart + Markup('<td><b>Plus Shipping</b></td></tr>')
         else:
             finalCart= finalCart + Markup('<td></td>')
-        finalCart= finalCart + Markup('<td>' + str(total) + '</td></tr>')
+            ship = ''
+        finalCart= finalCart + Markup('<tr><td>'  + str(total) + '</td>')
+        finalCart= finalCart + Markup('<td>' + str(ship) + '</td></tr>')
         finalCart= finalCart + Markup('</table>')
         return finalCart
   
