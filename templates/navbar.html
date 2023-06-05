@@ -23,10 +23,11 @@
 		<li><a class="navbar-brand" href="/Fusion">Amazone Fusion</a></li>
 		<li><p class="navbar-text"></p></li>
 	    <li><a class="navbar-brand" href="/about">About Us</a></li>
-        <li><a class="navbar-brand" href="/Cart">Cart</a></li>
 		<li><p class="navbar-text"></p></li>
-        <li><p class="navbar-text" id="cartnum">0</p></li>
-        <li><p class="navbar-text" id="txtb">Github userid: {{ session['user_data']['login']}}</p></li>
+        <li><a class="navbar-brand" href="/Cart">Cart</a></li>
+		<li><p class="navbar-text" id="it">Items In cart:</p></li>
+        <li><p class="navbar-text" id="cartnum">{{item}}</p></li>
+        <li><p class="navbar-text" id="it">Github userid: {{ session['user_data']['login']}}</p></li>
       {% endif %}
       <li>
         {% if logged_in %}

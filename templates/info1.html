@@ -5,17 +5,17 @@
 {% block content %}
 	<form method = "POST" action="info2">
     <b><label for="ccn">Credit Card Number:</label>
-	<input id="ccn" type="tel" size="1" inputmode="tel" maxlength="4" placeholder="xxxx" required>
-	<input id="ccn" type="tel" size="1" inputmode="tel" maxlength="4" placeholder="xxxx" required>
-	<input id="ccn" type="tel" size="1" inputmode="tel" maxlength="4" placeholder="xxxx" required>
-	<input id="ccn" type="tel" size="1" inputmode="tel" maxlength="4" placeholder="xxxx" required>
+	<input id="ccn" type="tel" size="1" inputmode="tel" minlength="4" maxlength="4" placeholder="xxxx" required>
+	<input id="ccn" type="tel" size="1" inputmode="tel" minlength="4" maxlength="4" placeholder="xxxx" required>
+	<input id="ccn" type="tel" size="1" inputmode="tel" minlength="4" maxlength="4" placeholder="xxxx" required>
+	<input id="ccn" type="tel" size="1" inputmode="tel" minlength="4" maxlength="4" placeholder="xxxx" required>
 	<br>
 	<label for="ed">Expiration Date:&#8205 &#8205 &#8205 &#8205 &#8205 &#8205 &#8205 &#8205 &#8205 </label>
-	<input id="ed" type="tel" size="1" inputmode="numeric" maxlength="2" placeholder="xx" required>
-	<input id="ed" type="tel" size="1" inputmode="numeric" maxlength="2" placeholder="xx" required>
+	<input id="ed" type="tel" size="1" inputmode="numeric" minlength="2" maxlength="2" placeholder="xx" required>
+	<input id="ed" type="tel" size="1" inputmode="numeric" minlength="2" maxlength="2" placeholder="xx" required>
 	<br>
 	<label for="ccv"> <b>CVV Number:&#8205 &#8205 &#8205 &#8205 &#8205 &#8205 &#8205 &#8205 &#8205 &#8205 &#8205 &#8205 &#8205 </label>
-	<input id="ccv" size="1" type="tel" inputmode="numeric" maxlength="3" placeholder="xxx" required> </b>
+	<input id="ccv" size="1" type="tel" inputmode="numeric" minlength="3" maxlength="3" placeholder="xxx" required> </b>
 	<br>
     <input type="submit" value="Continue">
    </form>
