@@ -51,7 +51,8 @@ print("connected to db")
 #this context processor adds the variable logged_in to the conext for all templates
 @app.context_processor
 def inject_logged_in():
-    return {"logged_in":('github_token' in session)}
+    cart=collection.find_one({'User': session['user_data']['id']})
+    return {"logged_in":('github_token' in session), "item": (str(len(cart['Item-Name'])))}
 
 @app.route('/')
 def home():
