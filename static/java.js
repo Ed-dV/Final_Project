@@ -45,3 +45,4 @@ $(document).ready(function(){
         $("#cartnum").load('/addtoCart', {"Cart":value.previousElementSibling.value})
     });
 });
+

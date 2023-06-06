@@ -8,6 +8,12 @@
 <br><br>
 <form action="/" method="GET" id="fdesc">
 <input type="submit" value="Return Home"/>
-
+</form>
+{% if 'current page' in session %}
+<form action="{{ page }}" method="GET" id="fdesc">
+<input type="submit" value="Continue Shopping"/>
+</form>
+{% endif %}
 </p>
+
 {% endblock %}

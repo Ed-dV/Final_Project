@@ -51,7 +51,8 @@ print("connected to db")
 #this context processor adds the variable logged_in to the conext for all templates
 @app.context_processor
 def inject_logged_in():
-    return {"logged_in":('github_token' in session)}
+    cart=collection.find_one({'User': session['user_data']['id']})
+    return {"logged_in":('github_token' in session), "item": (str(len(cart['Item-Name'])))}
 
 @app.route('/')
 def home():
@@ -79,8 +80,11 @@ def Fusion():
     
 @app.route('/fusiondone', methods=['POST'])
 def fusiondone():
+    cpage = ''
     collection.update_one({'User': session['user_data']['id']}, {'$set':{"AF":True}})
-    return render_template('fusiondone.html')
+    if 'current page' in session:
+        cpage = session['current page']
+    return render_template('fusiondone.html', page=cpage)
     
 @app.route('/alreadyFusion', methods=['POST'])
 def alreadyFusion():
@@ -108,7 +112,7 @@ def Cart():
     if collection.find_one({'User': session['user_data']["id"]})['AF'] == True:
         fus= ""
     else:
-        fus="A $5 shipping fee has been added to your order. Sign up for Amazone Fusion to get free shipping!"
+        fus=". A $5 shipping fee will be automatically added to your order. Sign up for Amazone Fusion to get free shipping!"
     return render_template('cart.html', cart=finalCart(), fus=fus)
 #redirect to GitHub's OAuth page and confirm callback URL
 @app.route('/login')
@@ -151,60 +155,72 @@ Items
 '''  
 @app.route('/glue', methods=["GET", "POST"])
 def glue():
+    session['current page']= '/glue'
     return render_template('glue.html')
 
 @app.route('/fork', methods=["GET", "POST"])
 def fork():
+    session['current page']= '/fork'
     return render_template('fork.html')
 
 
 @app.route('/wine', methods=["GET", "POST"])
 def wine():
+    session['current page']= '/wine'
     return render_template('wine.html')
 
 
 @app.route('/toaster', methods=["GET", "POST"])
 def toaster():
+    session['current page']= '/toaster'
     return render_template('toaster.html')
 
 
 @app.route('/rock', methods=["GET", "POST"])
 def rock():
+    session['current page']= '/rock'
     return render_template('rock.html')
 
 @app.route('/air', methods=["GET", "POST"])
 def air():
+    session['current page']= '/air'
     return render_template('air.html')
 
 
 @app.route('/excuse', methods=["GET", "POST"])
 def excuse():
+    session['current page']= '/excuse'
     return render_template('excuse.html')
 
 @app.route('/slippers', methods=["GET", "POST"])
 def slippers():
+    session['current page']= '/slippers'
     return render_template('slippers.html')
 
 @app.route('/fish', methods=["GET", "POST"])
 def fish():
+    session['current page']= '/fish'
     return render_template('fish.html')
 
 
 @app.route('/eyes', methods=["GET", "POST"])
 def eyes():
+    session['current page']= '/eyes'
     return render_template('eyes.html')
 
-    
 @app.route('/mug')
 def mug():
+    session['current page']= '/mug'
     return render_template('mug.html')
     
 @app.route('/clock')
 def clock():
+    session['current page']= '/clock'
     return render_template('clock.html')
     
 @app.route('/clear')
 def clear():
+    session['current page']= '/clear'
     return render_template('clear.html')
 
 '''
@@ -218,18 +234,29 @@ def addtoCart():
     return str(len(cart['Item-Name']))
     
 def finalCart(): 
-    y = collection.find_one({'User': session['user_data']['id']})['Item-Name']
+    x = collection.find_one({'User': session['user_data']['id']})
+    y = x['Item-Name']
+    
     if len(y) == 0:
         return('Your Amazone Cart is Empty')
     else:
         finalCart=Markup('<table> <tr> <th> Item </th> <th> Price </th> </tr>')
         total=0
+        ship=5
         for element in y:
             item = collection2.find_one({'_id': ObjectId(str(element))})
             finalCart= finalCart + Markup('<tr> <td>' + item['Item-Name'] + '</td>')
             finalCart= finalCart + Markup('<td>' + str(item['Price']) + '</td> </tr>')
             total= total + item['Price']
-        finalCart= finalCart + Markup('<tr><td><b>Total</b></td><td>' + str(total) + '</td> </tr>')
+            ship = ship + item['Price']
+        finalCart= finalCart + Markup('<tr><td><b>Total</b></td>')
+        if x['AF'] == False:
+            finalCart= finalCart + Markup('<td><b>Plus Shipping</b></td></tr>')
+        else:
+            finalCart= finalCart + Markup('<td></td>')
+            ship = ''
+        finalCart= finalCart + Markup('<tr><td>'  + str(total) + '</td>')
+        finalCart= finalCart + Markup('<td>' + str(ship) + '</td></tr>')
         finalCart= finalCart + Markup('</table>')
         return finalCart
   
