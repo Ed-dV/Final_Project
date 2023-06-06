@@ -51,8 +51,11 @@ print("connected to db")
 #this context processor adds the variable logged_in to the conext for all templates
 @app.context_processor
 def inject_logged_in():
-    cart=collection.find_one({'User': session['user_data']['id']})
-    return {"logged_in":('github_token' in session), "item": (str(len(cart['Item-Name'])))}
+    if 'user_data' in session:
+        cart=collection.find_one({'User': session['user_data']['id']})
+        return {"logged_in":('github_token' in session), "item": (str(len(cart['Item-Name'])))}
+    else:
+        return {"logged_in":('github_token' in session)}
 
 @app.route('/')
 def home():
@@ -130,7 +133,7 @@ def authorized():
     resp = github.authorized_response()
     if resp is None:
         session.clear()
-        flash('Access denied: reason=' + request.args['error'] + ' error=' + request.args['error_description'] + ' full=' + pprint.pformat(request.args), 'error')      
+        flash('Access denied: reason=' + request.args['error'] + ' error=' + request.args['error_description'] + ' full=' + pprint.pformat(request.args), 'error') 
     else:
         try:
             session['github_token'] = (resp['access_token'], '') #save the token to prove that the user logged in
